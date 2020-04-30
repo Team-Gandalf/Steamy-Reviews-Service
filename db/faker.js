@@ -19,15 +19,13 @@ for (let i = 0; i < reviewCount; i++) {
     date_posted: faker.date.past(),
     thread_length: faker.random.number(50),
     user: newUser
-  })
-  // console.log('obj', newUser);
-  // console.log('arr', reviews[i].user);
+  });
 }
 
 let fakeGame = {
   name: faker.commerce.productName(),
   numReviews: faker.random.number(),
   reviews: reviews
-}
+};
 
 module.exports.fakeGame = fakeGame;
