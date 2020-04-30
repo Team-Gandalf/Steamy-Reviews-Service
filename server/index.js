@@ -1,3 +1,4 @@
+const db = require('../db/index.js');
 const express = require('express');
 let app = express();
 
