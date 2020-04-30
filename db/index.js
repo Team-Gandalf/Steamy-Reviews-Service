@@ -12,7 +12,6 @@ let gameSchema = mongoose.Schema({
       helpful: Number,
       funny: Number,
       date_posted: Date,
-      language: String,
       thread_length: Number,
       user: {
         id: Number,
