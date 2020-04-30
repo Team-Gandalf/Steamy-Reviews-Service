@@ -6,7 +6,10 @@ const bodyParser = require('body-parser');
 app.use(express.static(__dirname + '/../client/dist'));
 app.use(bodyParser.json());
 
+// ROUTES
+app.get('/api/reviews', (req, res) => {
 
+});
 
 
 // PORT
