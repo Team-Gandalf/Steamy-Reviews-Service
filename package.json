@@ -19,12 +19,7 @@
   "homepage": "https://github.com/Team-Gandalf/reviews-service#readme",
   "dependencies": {
     "express": "^4.17.1",
-<<<<<<< HEAD
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-=======
     "mongoose": "^5.9.11"
->>>>>>> b9648aaa87ada97c26f9c216dacd8e462ba9c371
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
