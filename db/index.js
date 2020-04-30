@@ -1,47 +1,59 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true, useUnifiedTopology: true});
 
-let reviewSchema = mongoose.Schema({
+let gameSchema = mongoose.Schema({
   id: Number,
-  game_name: String,
-  description: String,
-  helpful: Number,
-  funny: Number,
-  date_posted: Date,
-  language: String,
-  thread_length: Number,
-  user: {
-    id: Number,
-    username: String,
-    steam_purchaser: Boolean,
-    numProducts: Number,
-    icon: String
-  }
+  name: String,
+  numReviews: Number,
+  reviews: [
+    {
+      id: Number,
+      description: String,
+      helpful: Number,
+      funny: Number,
+      date_posted: Date,
+      language: String,
+      thread_length: Number,
+      user: {
+        id: Number,
+        username: String,
+        steam_purchaser: Boolean,
+        numProducts: Number,
+        icon: String
+      }
+    }
+  ]
 })
 
-let Review = mongoose.model('Review', reviewSchema);
+let Game = mongoose.model('Game', gameSchema);
 
 
-let save = review => {
-  let entry = new Review({
-    id: review.id,
-    game_name: review.game_name,
-    description: review.description,
-    helpful: review.helpful,
-    funny: review.funny,
-    date_posted: review.date_posted,
-    language: review.language,
-    thread_length: review.thread_length,
-    user: {
-      id: review.user.id,
-      username: review.user.username,
-      steam_purchaser: review.user.steam_purchaser,
-      numProducts: review.user.numProducts,
-      icon: review.user.icon
-    }
+let save = game => {
+  let entry = new Game({
+    id: game.id,
+    name: game.name,
+    numReviews: game.numReviews,
+    reviews: [
+      {
+        id: game.review.id,
+        description: game.review.description,
+        helpful: game.review.helpful,
+        funny: game.review.funny,
+        date_posted: game.review.date_posted,
+        language: game.review.language,
+        thread_length: game.review.thread_length,
+        user: {
+          id: game.review.user.id,
+          username: game.review.user.username,
+          steam_purchaser: game.review.user.steam_purchaser,
+          numProducts: game.review.user.numProducts,
+          icon: game.review.user.icon
+        }
+      }
+    ]
   })
 
-  entry.save( (err) => {
+  entry.save( (err, results) => {
     if (err) {
       return console.error(err);
     }
@@ -49,8 +61,8 @@ let save = review => {
 }
 
 let find = callback => {
-  Review.find({}).sort('-helpful').limit(10).exec( (err, res) => {
-    callback(res);
+  Game.find({}).exec( (err, res) => {
+    callback(err, res);
   })
 }
 
