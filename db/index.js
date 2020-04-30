@@ -25,3 +25,16 @@ let reviewSchema = mongoose.Schema({
 
 let Review = mongoose.model('Review', reviewSchema);
 
+
+let save = review => {
+
+}
+
+let find = callback => {
+  Review.find({}).sort().limit(10).exec( (err, res) => {
+    callback(res)
+  })
+}
+
+module.exports.save = save;
+module.exports.find = find;
