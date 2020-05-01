@@ -24,8 +24,4 @@ app.get('/api/reviews', (req, res) => {
 });
 
 
-// PORT
-const port = 4200;
-app.listen(port, () => {
-  console.log(`Listening on port: ${port}`);
-});
+module.exports = app;
