@@ -1,10 +1,10 @@
-const db = require('../db/index.js');
 const express = require('express');
 
 const app = express();
 
 // MIDDLEWARE
 const bodyParser = require('body-parser');
+const db = require('../db/index.js');
 
 app.use(express.static(`${__dirname}/../client/dist`));
 app.use(bodyParser.json());
