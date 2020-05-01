@@ -28,7 +28,7 @@ const Review = mongoose.model('Review', reviewSchema);
 
 
 const save = (review) => {
-  const entry = new Review({
+  let entry = new Review({
     id: review.id,
     game: review.game,
     game_reviews: review.game_reviews,

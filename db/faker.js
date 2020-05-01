@@ -2,12 +2,12 @@ const faker = require('faker');
 const db = require('./index.js');
 
 for (let i = 0; i < 100; i += 1) {
-  const currentGame = faker.commerce.productName();
+  let currentGame = faker.commerce.productName();
 
-  const reviewCount = Math.floor(Math.random() * 50);
+  let reviewCount = Math.floor(Math.random() * 50);
 
   for (let j = 0; j < reviewCount; j += 1) {
-    const newUser = {
+    let newUser = {
       id: j,
       username: faker.internet.userName(),
       steam_purchaser: faker.random.boolean(),
@@ -15,7 +15,7 @@ for (let i = 0; i < 100; i += 1) {
       icon: faker.image.imageUrl(),
     };
 
-    const newReview = {
+    let newReview = {
       id: j,
       game: currentGame,
       game_reviews: reviewCount,
