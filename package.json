@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "seed": "node db/faker.js",
     "server": "nodemon server -i client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

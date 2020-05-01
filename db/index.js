@@ -1,30 +1,31 @@
 const mongoose = require('mongoose');
 mongoose.connect(
-  'mongodb://localhost/test',
+  'mongodb://localhost:27017/steamy',
   { useNewUrlParser: true, useUnifiedTopology: true}
 );
 
+let userSchema = mongoose.Schema({
+  id: { type: Number},
+  username: { type: String },
+  steam_purchaser: { type: Boolean},
+  numProducts: { type: Number },
+  icon: { type: String}
+})
+
+let reviewsSchema = mongoose.Schema({
+  id: { type: Number},
+  description: { type: String },
+  helpful: { type: Number },
+  date_posted: { type: Date },
+  thread_length: { type: Number},
+  user: { type: userSchema }
+})
+
 let gameSchema = mongoose.Schema({
-  id: Number,
-  name: String,
-  numReviews: Number,
-  reviews: [
-    {
-      id: Number,
-      description: String,
-      helpful: Number,
-      funny: Number,
-      date_posted: Date,
-      thread_length: Number,
-      user: {
-        id: Number,
-        username: String,
-        steam_purchaser: Boolean,
-        numProducts: Number,
-        icon: String
-      }
-    }
-  ]
+  id: { type: Number },
+  name: { type: String },
+  numReviews: { type: Number },
+  reviews: { type: [reviewsSchema] }
 })
 
 let Game = mongoose.model('Game', gameSchema);
@@ -37,20 +38,14 @@ let save = game => {
     numReviews: game.numReviews,
     reviews: [
       {
-        id: game.review.id,
-        description: game.review.description,
-        helpful: game.review.helpful,
-        funny: game.review.funny,
-        date_posted: game.review.date_posted,
-        language: game.review.language,
-        thread_length: game.review.thread_length,
-        user: {
-          id: game.review.user.id,
-          username: game.review.user.username,
-          steam_purchaser: game.review.user.steam_purchaser,
-          numProducts: game.review.user.numProducts,
-          icon: game.review.user.icon
-        }
+        id: game.reviews.id,
+        description: game.reviews.description,
+        helpful: game.reviews.helpful,
+        funny: game.reviews.funny,
+        date_posted: game.reviews.date_posted,
+        language: game.reviews.language,
+        thread_length: game.reviews.thread_length,
+        user: game.reviews.user
       }
     ]
   })
