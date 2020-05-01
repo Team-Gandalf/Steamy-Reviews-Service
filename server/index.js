@@ -9,7 +9,8 @@ app.use(bodyParser.json());
 
 // ROUTES
 app.get('/api/reviews', (req, res) => {
-  db.find( (err, results) => {
+  let game = req.body.game;
+  db.find( game, (err, results) => {
     if (err) {
       res.status(400).send(err);
     } else {
