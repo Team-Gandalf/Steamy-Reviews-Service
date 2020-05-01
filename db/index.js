@@ -53,8 +53,8 @@ let save = review => {
   })
 }
 
-let find = callback => {
-  Review.find({}).exec( (err, res) => {
+let find = (inputGame, callback) => {
+  Review.find({game: inputGame}).exec( (err, res) => {
     callback(err, res);
   })
 }
