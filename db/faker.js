@@ -1,19 +1,18 @@
 const faker = require('faker');
-const mongoose = require('mongoose');
 const db = require('./index.js');
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 100; i += 1) {
   let currentGame = faker.commerce.productName();
 
   let reviewCount = Math.floor(Math.random() * 50);
 
-  for (let j = 0; j < reviewCount; j++) {
+  for (let j = 0; j < reviewCount; j += 1) {
     let newUser = {
       id: j,
       username: faker.internet.userName(),
       steam_purchaser: faker.random.boolean(),
       numProducts: faker.random.number(500),
-      icon: faker.image.imageUrl()
+      icon: faker.image.imageUrl(),
     };
 
     let newReview = {
@@ -25,10 +24,9 @@ for (let i = 0; i < 100; i++) {
       funny: faker.random.number(1000),
       date_posted: faker.date.past(),
       thread_length: faker.random.number(50),
-      user: newUser
-    }
+      user: newUser,
+    };
 
     db.save(newReview);
   }
-
 }

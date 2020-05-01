@@ -1,32 +1,33 @@
 const mongoose = require('mongoose');
+
 mongoose.connect(
-  'mongodb://localhost:27017/steamy',
-  { useNewUrlParser: true, useUnifiedTopology: true}
+  'mongodb://localhost/steamy',
+  { useNewUrlParser: true, useUnifiedTopology: true },
 );
 
-let userSchema = mongoose.Schema({
-  id: { type: Number},
+const userSchema = mongoose.Schema({
+  id: { type: Number },
   username: { type: String },
-  steam_purchaser: { type: Boolean},
+  steam_purchaser: { type: Boolean },
   numProducts: { type: Number },
-  icon: { type: String}
-})
+  icon: { type: String },
+});
 
-let reviewSchema = mongoose.Schema({
-  id: { type: Number},
+const reviewSchema = mongoose.Schema({
+  id: { type: Number },
   game: { type: String },
-  game_reviews: { type: Number }
+  game_reviews: { type: Number },
   description: { type: String },
   helpful: { type: Number },
   date_posted: { type: Date },
-  thread_length: { type: Number},
-  user: { type: userSchema }
-})
+  thread_length: { type: Number },
+  user: { type: userSchema },
+});
 
-let Review = mongoose.model('Review', reviewSchema);
+const Review = mongoose.model('Review', reviewSchema);
 
 
-let save = review => {
+const save = (review) => {
   let entry = new Review({
     id: review.id,
     game: review.game,
@@ -42,22 +43,23 @@ let save = review => {
       username: review.user.username,
       steam_purchaser: review.user.steam_purchaser,
       numProducts: review.user.numProducts,
-      icon: review.user.icon
-    }
-  })
+      icon: review.user.icon,
+    },
+  });
 
-  entry.save( (err, results) => {
+  entry.save((err, results) => {
     if (err) {
-      return console.error(err);
+      console.error(err);
     }
-  })
-}
+    console.log('successfully saved!', results);
+  });
+};
 
-let find = (inputGame, callback) => {
-  Review.find({game: inputGame}).exec( (err, res) => {
+const find = (inputGame, callback) => {
+  Review.find({ game: inputGame }).exec((err, res) => {
     callback(err, res);
-  })
-}
+  });
+};
 
 module.exports.save = save;
 module.exports.find = find;
