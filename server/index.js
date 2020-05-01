@@ -17,8 +17,7 @@ app.get('/api/reviews', (req, res) => {
     if (err) {
       res.status(400).send(err);
     } else {
-      console.log(results);
-      res.status(200).send(results);
+      res.status(200).json(results);
     }
   });
 });
