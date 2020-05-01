@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "react": "webpack -d --watch",
     "seed": "node db/faker.js",
     "server": "nodemon server/server.js -i client",
     "test": "jest --detectOpenHandles"
