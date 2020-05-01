@@ -12,8 +12,10 @@ let userSchema = mongoose.Schema({
   icon: { type: String}
 })
 
-let reviewsSchema = mongoose.Schema({
+let reviewSchema = mongoose.Schema({
   id: { type: Number},
+  game: { type: String },
+  game_reviews: { type: Number }
   description: { type: String },
   helpful: { type: Number },
   date_posted: { type: Date },
@@ -21,33 +23,27 @@ let reviewsSchema = mongoose.Schema({
   user: { type: userSchema }
 })
 
-let gameSchema = mongoose.Schema({
-  id: { type: Number },
-  name: { type: String },
-  numReviews: { type: Number },
-  reviews: { type: [reviewsSchema] }
-})
-
-let Game = mongoose.model('Game', gameSchema);
+let Review = mongoose.model('Review', reviewSchema);
 
 
-let save = game => {
-  let entry = new Game({
-    id: game.id,
-    name: game.name,
-    numReviews: game.numReviews,
-    reviews: [
-      {
-        id: game.reviews.id,
-        description: game.reviews.description,
-        helpful: game.reviews.helpful,
-        funny: game.reviews.funny,
-        date_posted: game.reviews.date_posted,
-        language: game.reviews.language,
-        thread_length: game.reviews.thread_length,
-        user: game.reviews.user
-      }
-    ]
+let save = review => {
+  let entry = new Review({
+    id: review.id,
+    game: review.game,
+    game_reviews: review.game_reviews,
+    description: review.description,
+    helpful: review.helpful,
+    funny: review.funny,
+    date_posted: review.date_posted,
+    language: review.language,
+    thread_length: review.thread_length,
+    user: {
+      id: review.user.id,
+      username: review.user.username,
+      steam_purchaser: review.user.steam_purchaser,
+      numProducts: review.user.numProducts,
+      icon: review.user.icon
+    }
   })
 
   entry.save( (err, results) => {
@@ -58,11 +54,11 @@ let save = game => {
 }
 
 let find = callback => {
-  Game.find({}).exec( (err, res) => {
+  Review.find({}).exec( (err, res) => {
     callback(err, res);
   })
 }
 
 module.exports.save = save;
 module.exports.find = find;
-module.exports.Game = Game;
+module.exports.Review = Review;
