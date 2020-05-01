@@ -10,7 +10,7 @@ const databaseName = 'steamy';
 
 // connect to db
 beforeAll(async () => {
-  const url = `mongodb://127.0.0.1/${databaseName}`
+  const url = `mongodb://127.0.0.1/${databaseName}`;
   await mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 });
 
@@ -23,7 +23,7 @@ describe('Test the root path', () => {
   });
 
   // test get route to database with fake data
-  test('Should find items in database', async(done) => {
+  test('Should find items in database', async (done) => {
     let res = await request.get('/api/reviews')
       .send({
         game: 'Practical Granite Car',
