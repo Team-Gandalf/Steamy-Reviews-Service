@@ -15,7 +15,7 @@ let userSchema = mongoose.Schema({
 let reviewSchema = mongoose.Schema({
   id: { type: Number},
   game: { type: String },
-  game_reviews: { type: Number }
+  game_reviews: { type: Number },
   description: { type: String },
   helpful: { type: Number },
   date_posted: { type: Date },
