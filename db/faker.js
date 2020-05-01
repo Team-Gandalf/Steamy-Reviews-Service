@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const db = require('./index.js');
 
 for (let i = 0; i < 100; i++) {
-  let reviewCount = Math.floor(Math.random() * 50);
+  let currentGame = faker.commerce.productName();
 
-  let reviews = [];
+  let reviewCount = Math.floor(Math.random() * 50);
 
   for (let j = 0; j < reviewCount; j++) {
     let newUser = {
@@ -16,26 +16,19 @@ for (let i = 0; i < 100; i++) {
       icon: faker.image.imageUrl()
     };
 
-    reviews.push({
+    let newReview = {
       id: j,
+      game: currentGame,
+      game_reviews: reviewCount,
       description: faker.lorem.paragraph(),
       helpful: faker.random.number(1000),
       funny: faker.random.number(1000),
       date_posted: faker.date.past(),
       thread_length: faker.random.number(50),
       user: newUser
-    });
+    }
+
+    db.save(newReview);
   }
-
-  let fakeGame = {
-    id: i,
-    name: faker.commerce.productName(),
-    numReviews: faker.random.number(),
-    reviews: reviews
-  };
-
-  db.save(fakeGame);
-
-  console.log(i);
 
 }
