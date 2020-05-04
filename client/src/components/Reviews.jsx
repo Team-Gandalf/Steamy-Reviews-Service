@@ -5,7 +5,7 @@ import ReviewList from './ReviewList.jsx';
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
-  const [id, setId] = useState(1);
+  const [id, setId] = useState();
 
   const getAllReviews = () => {
     axios.get(`http://localhost:4200/api/reviews/${id}`)
