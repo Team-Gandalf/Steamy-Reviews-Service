@@ -27,9 +27,9 @@ const ReviewEntry = (props) => {
           {review.date_posted}
         </div>
         <div className="control_block">
-          <button className="voteUp">
-          <button className="voteDown">
-          <button className="voteFunny">
+          <button className="voteUp"></button>
+          <button className="voteDown"></button>
+          <button className="voteFunny"></button>
         </div>
         <div className="vote_info">
           {review.helpful} people found this review helpful

@@ -8,7 +8,7 @@ const Reviews = () => {
   const [id, setId] = useState(1);
 
   const getAllReviews = () => {
-    axios.get(`127.0.0.1:4200/api/reviews/${id}`)
+    axios.get(`http://localhost:4200/api/reviews/${id}`)
       .then((results) => {
         setAllReviews(results.data);
       })

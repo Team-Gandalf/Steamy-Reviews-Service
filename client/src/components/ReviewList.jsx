@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ReviewEntry from 'ReviewEntry.jsx';
+import ReviewEntry from './ReviewEntry.jsx';
 
 const ReviewList = (props) => {
   const { allReviews } = props;
