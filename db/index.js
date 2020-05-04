@@ -43,6 +43,7 @@ const save = (review) => {
       username: review.user.username,
       steam_purchaser: review.user.steam_purchaser,
       numProducts: review.user.numProducts,
+      numReviews: review.user.numReviews,
       icon: review.user.icon,
     },
   });
