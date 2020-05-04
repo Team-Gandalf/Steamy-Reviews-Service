@@ -1,6 +1,24 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import axios from 'axios';
 
 const Reviews = () => {
+  const [allReviews, setAllReviews] = useState([]);
+  const [id, setId] = useState(1);
+
+  const getAllReviews = () => {
+    axios.get(`127.0.0.1:4200/api/reviews/${id}`)
+      .then((results) => {
+        setAllReviews(results.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
+  useEffect(() => {
+    getAllReviews();
+  }, []);
+
   return (
     <div className="left-col">
       <div className="user_reviews_sub_header">
@@ -9,6 +27,10 @@ const Reviews = () => {
           In the past 30 days
         </span>
       </div>
+
+      {/* <Profile />
+
+      <Content /> */}
     </div>
   );
 };
