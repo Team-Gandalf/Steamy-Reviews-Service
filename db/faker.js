@@ -12,11 +12,12 @@ for (let i = 0; i < 100; i += 1) {
       username: faker.internet.userName(),
       steam_purchaser: faker.random.boolean(),
       numProducts: faker.random.number(500),
+      numReviews: faker.random.number(500),
       icon: faker.image.imageUrl(),
     };
 
     let newReview = {
-      id: j,
+      id: i,
       game: currentGame,
       game_reviews: reviewCount,
       description: faker.lorem.paragraph(),

@@ -10,6 +10,7 @@ const userSchema = mongoose.Schema({
   username: { type: String },
   steam_purchaser: { type: Boolean },
   numProducts: { type: Number },
+  numReviews: { type: Number },
   icon: { type: String },
 });
 
@@ -43,6 +44,7 @@ const save = (review) => {
       username: review.user.username,
       steam_purchaser: review.user.steam_purchaser,
       numProducts: review.user.numProducts,
+      numReviews: review.user.numReviews,
       icon: review.user.icon,
     },
   });
@@ -56,7 +58,7 @@ const save = (review) => {
 };
 
 const find = (inputGame, callback) => {
-  Review.find({ game: inputGame }).exec((err, res) => {
+  Review.find({ id: inputGame }).exec((err, res) => {
     callback(err, res);
   });
 };
