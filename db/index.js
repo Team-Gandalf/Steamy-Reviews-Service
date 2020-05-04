@@ -10,6 +10,7 @@ const userSchema = mongoose.Schema({
   username: { type: String },
   steam_purchaser: { type: Boolean },
   numProducts: { type: Number },
+  numReviews: { type: Number },
   icon: { type: String },
 });
 
