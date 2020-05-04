@@ -17,7 +17,7 @@ for (let i = 0; i < 100; i += 1) {
     };
 
     let newReview = {
-      id: j,
+      id: i,
       game: currentGame,
       game_reviews: reviewCount,
       description: faker.lorem.paragraph(),
