@@ -7,9 +7,7 @@ const ReviewList = (props) => {
   return (
     <div>
       {allReviews.map((review) => {
-        return (
-          <ReviewEntry review={review} />
-        );
+        return <ReviewEntry review={review} />;
       })}
     </div>
   );
