@@ -13,10 +13,12 @@ const ReviewEntry = (props) => {
           {review.user.username}
         </div>
         <div className="num_owned_games">
-          {review.user.numProducts} products in account
+          {review.user.numProducts}
+          products in account
         </div>
         <div className="num_reviews">
-          {review.user.numReviews} reviews
+          {review.user.numReviews}
+          reviews
         </div>
       </div>
       <div className="rightcol">
@@ -32,9 +34,12 @@ const ReviewEntry = (props) => {
           <button className="voteFunny"></button>
         </div>
         <div className="vote_info">
-          {review.helpful} people found this review helpful
-          {review.funny} people found this review funny
-          {review.thread_length} additional comments
+          {review.helpful}
+          people found this review helpful
+          {review.funny}
+          people found this review funny
+          {review.thread_length}
+          additional comments
         </div>
       </div>
     </div>

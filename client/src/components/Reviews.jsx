@@ -9,8 +9,8 @@ const Reviews = () => {
 
   const getAllReviews = () => {
     axios.get(`http://localhost:4200/api/reviews/${id}`)
-      .then((results) => {
-        setAllReviews(results.data);
+      .then(({ data }) => {
+        setAllReviews(data);
       })
       .catch((err) => {
         console.error(err);
