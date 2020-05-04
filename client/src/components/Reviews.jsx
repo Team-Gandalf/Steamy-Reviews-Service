@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
+import ReviewList from './ReviewList.jsx';
+
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
   const [id, setId] = useState(1);
@@ -27,10 +29,7 @@ const Reviews = () => {
           In the past 30 days
         </span>
       </div>
-
-      {/* <Profile />
-
-      <Content /> */}
+      <ReviewList allReviews={allReviews} />
     </div>
   );
 };
