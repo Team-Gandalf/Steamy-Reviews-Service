@@ -25,7 +25,7 @@ const ReviewEntry = (props) => {
         <div className="content">
           {review.description}
         </div>
-        <div className="posted">
+        <div className="postedDate">
           {review.date_posted}
         </div>
         <div className="control_block">
