@@ -21,6 +21,7 @@ const reviewSchema = mongoose.Schema({
   hours: { type: Number },
   description: { type: String },
   helpful: { type: Number },
+  funny: { type: Number },
   date_posted: { type: Date },
   thread_length: { type: Number },
   user: { type: userSchema },
