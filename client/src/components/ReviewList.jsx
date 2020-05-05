@@ -5,7 +5,7 @@ const ReviewList = (props) => {
   const { allReviews } = props;
 
   return (
-    <div>
+    <div className="review_box">
       {allReviews.map((review) => {
         return <ReviewEntry review={review} />;
       })}
