@@ -5,7 +5,7 @@ import ReviewList from './ReviewList.jsx';
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
-  const [id, setId] = useState(1);
+  let id = window.location.search.substring(2);
 
   const getAllReviews = () => {
     axios.get(`http://localhost:4200/api/reviews/${id}`)
@@ -18,6 +18,7 @@ const Reviews = () => {
   };
 
   useEffect(() => {
+    console.log(window.location.search);
     getAllReviews();
   }, []);
 
