@@ -24,21 +24,30 @@ const ReviewEntry = (props) => {
           <div className="thumb">
             <img src="/img/thumbsup.png" width="40" height="40" alt="thumb"></img>
           </div>
+          <img className="review_source" src="/img/steamicon.png" alt="steam"></img>
           <div className="title ellipsis">Recommended</div>
           <div className="hours ellipsis">
             {`${review.hours} on record`}
           </div>
         </div>
-        <div className="content">
-          {review.description}
-        </div>
         <div className="postedDate">
           {`Posted: ${review.date_posted}`}
         </div>
+        <div className="content">
+          {review.description}
+        </div>
         <div className="control_block">
-          <button className="voteUp">Yes</button>
-          <button className="voteDown">No</button>
-          <button className="voteFunny">Funny</button>
+          Was this review helpful?
+          <br></br>
+          <button type="button" className="voteUp">
+            <span>Yes</span>
+          </button>
+          <button type="button" className="voteDown">
+            <span>No</span>
+          </button>
+          <button type="button" className="voteFunny">
+            <span>Funny</span>
+          </button>
         </div>
         <div className="vote_info">
           {`${review.helpful} people found this review helpful`}
