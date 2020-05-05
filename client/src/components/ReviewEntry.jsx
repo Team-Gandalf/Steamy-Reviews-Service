@@ -15,7 +15,7 @@ const ReviewEntry = (props) => {
           <img className="review_source" src="/img/steamicon.png" alt="steam"></img>
           <div className="title ellipsis">Recommended</div>
           <div className="hours ellipsis">
-            {`${review.hours} on record`}
+            {`${review.hours} gametime hours on record`}
           </div>
         </div>
         <div className="postedDate">

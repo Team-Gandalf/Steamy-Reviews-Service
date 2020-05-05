@@ -17,7 +17,7 @@ const ReviewProfile = (props) => {
         {`${user.numReviews} reviews`}
       </div>
     </div>
-  )
+  );
 };
 
 export default ReviewProfile;
