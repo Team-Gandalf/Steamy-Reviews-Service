@@ -1,24 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import ReviewProfile from './ReviewProfile.jsx';
 
 const ReviewEntry = (props) => {
   const { review } = props;
 
   return (
     <div id="ReviewContent">
-      <div className="leftcol">
-        <div class="avatar">
-          <img src={review.user.icon}></img>
-        </div>
-        <div className="username">
-          {review.user.username}
-        </div>
-        <div className="num_owned_games">
-          {`${review.user.numProducts} products in account`}
-        </div>
-        <div className="num_reviews">
-          {`${review.user.numReviews} reviews`}
-        </div>
-      </div>
+      <ReviewProfile user={review.user} />
       <div className="rightcol">
         <div className="vote_header">
           <div className="thumb">
