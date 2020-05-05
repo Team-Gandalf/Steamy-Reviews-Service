@@ -4,6 +4,10 @@ import ReviewProfile from './ReviewProfile.jsx';
 const ReviewEntry = (props) => {
   const { review } = props;
 
+  let date = new Date(review.date_posted);
+  let options = { month: 'long', day: 'numeric' };
+  let postedDate = date.toLocaleString('en-US', options);
+
   return (
     <div id="ReviewContent">
       <ReviewProfile user={review.user} />
@@ -19,7 +23,7 @@ const ReviewEntry = (props) => {
           </div>
         </div>
         <div className="postedDate">
-          {`Posted: ${review.date_posted}`}
+          {`Posted: ${postedDate}`}
         </div>
         <div className="content">
           {review.description}
