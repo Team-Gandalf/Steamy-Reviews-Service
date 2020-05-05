@@ -4,5 +4,5 @@ import Reviews from './components/Reviews.jsx';
 
 ReactDOM.render(
   <Reviews />,
-  document.getElementById('app'),
+  document.getElementById('reviews'),
 );
