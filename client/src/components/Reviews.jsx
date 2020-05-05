@@ -2,8 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
 
-// Styled Components
-import Body from '../styles/Main.js';
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
