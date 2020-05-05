@@ -18,7 +18,6 @@ const Reviews = () => {
   };
 
   useEffect(() => {
-    console.log(window.location.search);
     getAllReviews();
   }, []);
 
