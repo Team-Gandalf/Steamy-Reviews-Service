@@ -21,7 +21,9 @@ const ReviewEntry = (props) => {
       </div>
       <div className="rightcol">
         <div className="vote_header">
-          <div className="thumb">Thumb</div>
+          <div className="thumb">
+            <img src="/img/thumbsup.png" width="40" height="40" alt="thumb"></img>
+          </div>
           <div className="title ellipsis">Recommended</div>
           <div className="hours ellipsis">
             {`${review.hours} on record`}
