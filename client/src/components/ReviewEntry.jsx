@@ -7,21 +7,23 @@ const ReviewEntry = (props) => {
     <div id="ReviewContent">
       <div className="leftcol">
         <div class="avatar">
-          <a href={review.user.icon}></a>
+          <img src={review.user.icon}></img>
         </div>
         <div className="username">
           {review.user.username}
         </div>
         <div className="num_owned_games">
-          {review.user.numProducts}
-          products in account
+          {`${review.user.numProducts} products in account`}
         </div>
         <div className="num_reviews">
-          {review.user.numReviews}
-          reviews
+          {`${review.user.numReviews} reviews`}
         </div>
       </div>
       <div className="rightcol">
+        <div className="vote_header">
+          <div className="thumb">Thumb</div>
+          <div className="title ellipsis">Recommended</div>
+        </div>
         <div className="content">
           {review.description}
         </div>
@@ -34,12 +36,12 @@ const ReviewEntry = (props) => {
           <button className="voteFunny"></button>
         </div>
         <div className="vote_info">
-          {review.helpful}
-          people found this review helpful
-          {review.funny}
-          people found this review funny
-          {review.thread_length}
-          additional comments
+          {`${review.helpful} people found this review helpful`}
+          <br></br>
+          {`${review.funny} people found this review funny`}
+          <br></br>
+          {`${review.thread_length} additional comments`}
+          <br></br>
         </div>
       </div>
     </div>
