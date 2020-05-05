@@ -24,9 +24,9 @@ const Reviews = () => {
   return (
     <div className="left-col">
       <div className="user_reviews_sub_header">
-        Most Helpful Reviews
+        {`Most Helpful Reviews `}
         <span className="user_reviews_most_helpful_days">
-          In the past 30 days
+          {`In the past 30 days`}
         </span>
       </div>
       <ReviewList allReviews={allReviews} />

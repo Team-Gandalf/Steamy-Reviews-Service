@@ -23,17 +23,20 @@ const ReviewEntry = (props) => {
         <div className="vote_header">
           <div className="thumb">Thumb</div>
           <div className="title ellipsis">Recommended</div>
+          <div className="hours ellipsis">
+            {`${review.hours} on record`}
+          </div>
         </div>
         <div className="content">
           {review.description}
         </div>
         <div className="postedDate">
-          {review.date_posted}
+          {`Posted: ${review.date_posted}`}
         </div>
         <div className="control_block">
-          <button className="voteUp"></button>
-          <button className="voteDown"></button>
-          <button className="voteFunny"></button>
+          <button className="voteUp">Yes</button>
+          <button className="voteDown">No</button>
+          <button className="voteFunny">Funny</button>
         </div>
         <div className="vote_info">
           {`${review.helpful} people found this review helpful`}
