@@ -8,3 +8,11 @@ import ReviewProfile from '../components/ReviewProfile.jsx';
 
 
 configure({ adapter: new Adapter() });
+
+describe('Reviews', () => {
+  test('should render correctly in "debug" mode', () => {
+    const component = shallow(<Reviews debug />);
+
+    expect(component).toMatchSnapshot();
+  });
+});
