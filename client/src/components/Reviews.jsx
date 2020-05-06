@@ -29,7 +29,7 @@ const Reviews = () => {
           {`In the past 30 days`}
         </span>
       </div>
-      <ReviewList allReviews={allReviews} />
+      <ReviewList allReviews={allReviews} key={id} />
     </div>
   );
 };

@@ -8,9 +8,13 @@ const ReviewEntry = (props) => {
   let options = { month: 'long', day: 'numeric' };
   let postedDate = date.toLocaleString('en-US', options);
 
+  const handleVote = (e) => {
+    console.log(e.target.value);
+  }
+
   return (
     <div id="ReviewContent">
-      <ReviewProfile user={review.user} />
+      <ReviewProfile user={review.user} key={review.user.id} />
       <div className="rightcol">
         <div className="vote_header">
           <div className="thumb">
@@ -31,7 +35,11 @@ const ReviewEntry = (props) => {
         <div className="control_block">
           Was this review helpful?
           <br></br>
-          <button type="button" className="votecontrol voteUp">
+          <button
+            type="button"
+            className="votecontrol voteUp"
+            onClick={handleVote}
+          >
             <span>Yes</span>
           </button>
           <button type="button" className="votecontrol voteDown">

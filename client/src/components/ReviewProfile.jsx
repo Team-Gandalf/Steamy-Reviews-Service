@@ -4,7 +4,7 @@ const ReviewProfile = (props) => {
   const { user } = props;
   return (
     <div className="leftcol">
-      <div class="avatar">
+      <div className="avatar">
         <img src={user.icon}></img>
       </div>
       <div className="username">
