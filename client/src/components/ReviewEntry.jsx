@@ -9,8 +9,8 @@ const ReviewEntry = (props) => {
   let postedDate = date.toLocaleString('en-US', options);
 
   const handleVote = (e) => {
-    console.log(e.target.value);
-  }
+    console.log(e.target.id);
+  };
 
   return (
     <div id="ReviewContent">
@@ -40,13 +40,21 @@ const ReviewEntry = (props) => {
             className="votecontrol voteUp"
             onClick={handleVote}
           >
-            <span>Yes</span>
+            <span id="voteUp">Yes</span>
           </button>
-          <button type="button" className="votecontrol voteDown">
-            <span>No</span>
+          <button
+            type="button"
+            className="votecontrol voteDown"
+            onClick={handleVote}
+          >
+            <span id="voteDown">No</span>
           </button>
-          <button type="button" className="votecontrol voteFunny">
-            <span>Funny</span>
+          <button
+            type="button"
+            className="votecontrol voteFunny"
+            onClick={handleVote}
+          >
+            <span id="voteFunny">Funny</span>
           </button>
         </div>
         <div className="vote_info">
