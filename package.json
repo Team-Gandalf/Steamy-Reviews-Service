@@ -7,7 +7,7 @@
     "react": "webpack -d --watch",
     "seed": "node db/faker.js",
     "server": "nodemon server/server.js -i client",
-    "test": "jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles --coverage"
   },
   "repository": {
     "type": "git",
