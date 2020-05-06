@@ -21,6 +21,10 @@ const Reviews = () => {
     getAllReviews();
   }, []);
 
+  const updateVotes = (case) => {
+
+  };
+
   return (
     <div className="left-col">
       <div className="user_reviews_sub_header">
@@ -29,7 +33,7 @@ const Reviews = () => {
           {`In the past 30 days`}
         </span>
       </div>
-      <ReviewList allReviews={allReviews} key={id} />
+      <ReviewList allReviews={allReviews} key={id} handleVote={updateVotes} />
     </div>
   );
 };

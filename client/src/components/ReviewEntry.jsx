@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import ReviewProfile from './ReviewProfile.jsx';
 
 const ReviewEntry = (props) => {
-  const { review } = props;
+  const { review, updateVote } = props;
 
   let date = new Date(review.date_posted);
   let options = { month: 'long', day: 'numeric' };
   let postedDate = date.toLocaleString('en-US', options);
 
   const handleVote = (e) => {
-    console.log(e.target.id);
+    updateVote(e.target.id);
   };
 
   return (
