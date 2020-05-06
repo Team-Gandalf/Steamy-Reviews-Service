@@ -21,19 +21,26 @@ const Reviews = () => {
     getAllReviews();
   }, []);
 
-  const updateVotes = (e) => {
-    let value = 0;
+  const updateVotes = (e, val) => {
     let field = 'helpful';
-    if (e === 'voteDown') {
-      value = 1;
+    if (e === 'voteUp') {
+      val += 1;
     } else if (e === 'voteDown') {
-      value = -1;
+      val -= 1;
     } else {
-      value = 1;
+      val += 1;
       field = 'funny';
     }
 
-    axios.post
+    axios.patch(`http://localhost:4200/api/reviews/${id}`, {
+      field: val,
+    })
+      .then((res) => {
+        getAllReviews();
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   return (

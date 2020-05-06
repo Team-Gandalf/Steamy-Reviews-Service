@@ -9,7 +9,11 @@ const ReviewEntry = (props) => {
   let postedDate = date.toLocaleString('en-US', options);
 
   const handleVote = (e) => {
-    updateVote(e.target.id);
+    let value = review.helpful;
+    if (e.target.id === 'voteFunny') {
+      value = review.funny;
+    }
+    updateVote(e.target.id, value);
   };
 
   return (
