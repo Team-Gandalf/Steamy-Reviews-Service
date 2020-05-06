@@ -20,7 +20,7 @@ for (let i = 0; i < 100; i += 1) {
       id: i,
       game: currentGame,
       game_reviews: reviewCount,
-      hours: faker.random.number(100),
+      hours: faker.finance.amount(0, 100, 1),
       description: faker.lorem.paragraph(),
       helpful: faker.random.number(1000),
       funny: faker.random.number(1000),

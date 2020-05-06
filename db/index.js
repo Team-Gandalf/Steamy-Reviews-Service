@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 
 mongoose.connect(
   'mongodb://localhost/steamy',
-  { useNewUrlParser: true, useUnifiedTopology: true },
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  },
 );
 
 const userSchema = mongoose.Schema({
@@ -61,11 +65,24 @@ const save = (review) => {
 };
 
 const find = (inputGame, callback) => {
-  Review.find({ id: inputGame }).exec((err, res) => {
+  Review.find({ id: inputGame }).sort({ helpful: -1 }).exec((err, res) => {
     callback(err, res);
   });
 };
 
+const update = (gameId, reviewId, field, value, callback) => {
+  if (field === 'helpful') {
+    Review.findOneAndUpdate({ id: gameId, 'user.id': reviewId }, { helpful: value }, (err, res) => {
+      callback(err, res);
+    });
+  } else {
+    Review.findOneAndUpdate({ id: gameId, 'user.id': reviewId }, { funny: value }, (err, res) => {
+      callback(err, res);
+    });
+  }
+};
+
+module.exports.update = update;
 module.exports.save = save;
 module.exports.find = find;
 module.exports.Review = Review;
