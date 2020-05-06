@@ -61,7 +61,7 @@ const save = (review) => {
 };
 
 const find = (inputGame, callback) => {
-  Review.find({ id: inputGame }).exec((err, res) => {
+  Review.find({ id: inputGame }).sort({ date_posted: -1 }).exec((err, res) => {
     callback(err, res);
   });
 };
