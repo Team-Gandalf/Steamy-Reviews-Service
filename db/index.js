@@ -78,6 +78,7 @@ const update = (gameId, reviewId, field, value, callback) => {
   }
 }
 
+module.exports.update = update;
 module.exports.save = save;
 module.exports.find = find;
 module.exports.Review = Review;
