@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
 
@@ -21,8 +21,19 @@ const Reviews = () => {
     getAllReviews();
   }, []);
 
-  const updateVotes = (case) => {
+  const updateVotes = (e) => {
+    let value = 0;
+    let field = 'helpful';
+    if (e === 'voteDown') {
+      value = 1;
+    } else if (e === 'voteDown') {
+      value = -1;
+    } else {
+      value = 1;
+      field = 'funny';
+    }
 
+    axios.post
   };
 
   return (
