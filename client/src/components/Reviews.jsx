@@ -21,7 +21,7 @@ const Reviews = () => {
     getAllReviews();
   }, []);
 
-  const updateVotes = (e, val, id) => {
+  const updateVotes = (e, val, reviewId) => {
     let field = 'helpful';
     if (e === 'voteUp') {
       val += 1;
@@ -35,9 +35,10 @@ const Reviews = () => {
     axios.patch(`http://localhost:4200/api/reviews/${id}`, {
       field: field,
       value: val,
-      reviewId: id,
+      reviewId: reviewId,
     })
-      .then((res) => {
+      .then((results) => {
+        console.log(results);
         getAllReviews();
       })
       .catch((err) => {
