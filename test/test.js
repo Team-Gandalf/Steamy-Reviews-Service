@@ -1,4 +1,3 @@
-// const puppeteer = require('puppeteer');
 const supertest = require('supertest');
 const mongoose = require('mongoose');
 const app = require('../server/index.js');
