@@ -18,8 +18,14 @@ describe('Renders components successfully', () => {
     expect(shallow(<Reviews />).find('.left-col').exists()).toBe(true);
   });
 
-  test('loads get request', () => {
-    const app = mount(<Reviews />);
+  test('loads ReviewList component', () => {
+    mount(<Reviews />);
+    expect(shallow(<ReviewList allReviews={exampleData} />).exists()).toBe(true);
+  });
+
+  test('loads ReviewEntry component', () => {
+    mount(<ReviewList allReviews={exampleData} />);
+    expect(shallow(<ReviewEntry review={exampleData[0]} />).exists()).toBe(true);
   });
 
 });
