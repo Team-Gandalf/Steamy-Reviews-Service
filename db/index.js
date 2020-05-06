@@ -76,7 +76,7 @@ const update = (gameId, reviewId, field, value, callback) => {
       callback(err, res);
     });
   }
-}
+};
 
 module.exports.update = update;
 module.exports.save = save;
