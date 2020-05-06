@@ -14,9 +14,9 @@ const ReviewEntry = (props) => {
       <div className="rightcol">
         <div className="vote_header">
           <div className="thumb">
-            <img src="/img/thumbsup.png" width="40" height="40" alt="thumb"></img>
+            <img src="./img/thumbsup.png" width="40" height="40" ></img>
           </div>
-          <img className="review_source" src="/img/steamicon.png" alt="steam"></img>
+          <img className="review_source" src="./img/steamicon.png"></img>
           <div className="title ellipsis">Recommended</div>
           <div className="hours ellipsis">
             {`${review.hours} gametime hours on record`}
@@ -31,13 +31,13 @@ const ReviewEntry = (props) => {
         <div className="control_block">
           Was this review helpful?
           <br></br>
-          <button type="button" className="voteUp">
+          <button type="button" className="votecontrol voteUp">
             <span>Yes</span>
           </button>
-          <button type="button" className="voteDown">
+          <button type="button" className="votecontrol voteDown">
             <span>No</span>
           </button>
-          <button type="button" className="voteFunny">
+          <button type="button" className="votecontrol voteFunny">
             <span>Funny</span>
           </button>
         </div>
