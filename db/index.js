@@ -66,6 +66,18 @@ const find = (inputGame, callback) => {
   });
 };
 
+const update = (gameId, reviewId, field, value, callback) => {
+  if (field === 'helpful') {
+    Review.findOneAndUpdate({ id: gameId, user.id: reviewId }, { helpful: value}).exec((err, res) => {
+      callback(err, res);
+    })
+  } else {
+    Review.findOneAndUpdate({ id: gameId, user.id: reviewId }, { funny: value }).exec((err, res) => {
+      callback(err, res);
+    })
+  }
+}
+
 module.exports.save = save;
 module.exports.find = find;
 module.exports.Review = Review;
