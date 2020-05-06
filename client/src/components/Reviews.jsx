@@ -38,7 +38,6 @@ const Reviews = () => {
       reviewId: reviewId,
     })
       .then((results) => {
-        console.log(results);
         getAllReviews();
       })
       .catch((err) => {
