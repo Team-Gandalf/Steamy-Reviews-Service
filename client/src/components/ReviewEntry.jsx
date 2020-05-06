@@ -13,7 +13,7 @@ const ReviewEntry = (props) => {
     if (e.target.id === 'voteFunny') {
       value = review.funny;
     }
-    updateVote(e.target.id, value);
+    updateVote(e.target.id, value, review.user.id);
   };
 
   return (
