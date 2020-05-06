@@ -17,14 +17,14 @@ beforeAll(async () => {
 // test get request on server
 describe('Test the root path', () => {
   test('It should response the GET method', async (done) => {
-    let res = await request.get('/api/reviews');
+    let res = await request.get('/api/reviews/1');
     expect(res.statusCode).toBe(200);
     done();
   });
 
   // test get route to database with fake data
   test('Should find items in database', async (done) => {
-    let res = await request.get('/api/reviews')
+    let res = await request.get('/api/reviews/1')
       .send({
         game: 'Practical Granite Car',
       });
