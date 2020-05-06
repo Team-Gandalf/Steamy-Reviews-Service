@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 
 mongoose.connect(
   'mongodb://localhost/steamy',
-  { useNewUrlParser: true, useUnifiedTopology: true },
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  },
 );
 
 const userSchema = mongoose.Schema({
