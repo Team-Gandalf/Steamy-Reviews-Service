@@ -15,7 +15,7 @@ module.exports = {
   // cacheDirectory: "/tmp/jest_rs",
 
   // Automatically clear mock calls and instances between every test
-  clearMocks: true,
+  // clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
@@ -24,7 +24,7 @@ module.exports = {
   // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  // coverageDirectory: undefined,
+  // coverageDirectory: "coverage",
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -94,7 +94,30 @@ module.exports = {
   // preset: undefined,
 
   // Run tests from one or more projects
-  // projects: undefined,
+  projects: [
+    {
+      clearMocks: true,
+      coverageDirectory: 'coverage',
+      displayName: 'backend',
+      testEnvironment: 'node',
+      testMatch: [
+        '<rootDir>/backend.test.js',
+      ],
+      verbose: false,
+    },
+    {
+      clearMocks: true,
+      coverageDirectory: 'coverage',
+      displayName: 'frontend',
+      setupFiles: ['./client/src/setupTests.js'],
+      snapshotSerializers: ['enzyme-to-json/serializer'],
+      testEnvironment: 'jsdom',
+      testMatch: [
+        '<rootDir>/client/src/test/reviews.test.js',
+      ],
+      verbose: false,
+    },
+  ],
 
   // Use this configuration option to add custom reporters to Jest
   // reporters: undefined,
@@ -123,16 +146,16 @@ module.exports = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
+  // setupFiles: ["./client/src/setupTests.js"],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
   // setupFilesAfterEnv: [],
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
-  // snapshotSerializers: [],
+  // snapshotSerializers: ["enzyme-to-json/serializer"],
 
   // The test environment that will be used for testing
-  testEnvironment: "node",
+  // testEnvironment: "jsdom",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -167,7 +190,9 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  // transform: {
+  //   "^.+\\.jsx?$": "babel-jest"
+  // },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

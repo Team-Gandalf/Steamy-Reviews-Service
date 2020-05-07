@@ -21,7 +21,7 @@ for (let i = 0; i < 100; i += 1) {
       game: currentGame,
       game_reviews: reviewCount,
       hours: faker.finance.amount(0, 100, 1),
-      description: faker.lorem.paragraph(),
+      description: faker.lorem.paragraphs(),
       helpful: faker.random.number(1000),
       funny: faker.random.number(1000),
       date_posted: faker.date.past(),
