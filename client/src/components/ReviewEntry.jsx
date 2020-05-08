@@ -17,7 +17,7 @@ const ReviewEntry = (props) => {
   };
 
   return (
-    <div id="ReviewContent">
+    <div id="ReviewContent"  className="partial">
       <ReviewProfile user={review.user} key={review.user.id} />
       <div className="rightcol">
         <div className="vote_header">
@@ -36,6 +36,12 @@ const ReviewEntry = (props) => {
         <div className="content">
           {review.description}
         </div>
+        <div className="posted">
+          <div className="view_more">
+            <a>Read More</a>
+          </div>
+        </div>
+        <div className="line" />
         <div className="control_block">
           Was this review helpful?
           <br />
