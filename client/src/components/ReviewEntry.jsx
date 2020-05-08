@@ -38,7 +38,7 @@ const ReviewEntry = (props) => {
         </div>
         <div className="control_block">
           Was this review helpful?
-          <br></br>
+          <br />
           <button
             type="button"
             className="votecontrol voteUp"
@@ -63,13 +63,14 @@ const ReviewEntry = (props) => {
         </div>
         <div className="vote_info">
           {`${review.helpful} people found this review helpful`}
-          <br></br>
+          <br />
           {`${review.funny} people found this review funny`}
-          <br></br>
+          <br />
           {`${review.thread_length} additional comments`}
-          <br></br>
+          <br />
         </div>
       </div>
+      <div style={{ clear: 'left' }} />
     </div>
   );
 };
