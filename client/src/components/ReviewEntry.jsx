@@ -8,6 +8,12 @@ const ReviewEntry = (props) => {
   let options = { month: 'long', day: 'numeric' };
   let postedDate = date.toLocaleString('en-US', options);
 
+  const handleContent = (e) => {
+    const element = document.getElementById('ReviewContent');
+    element.classList.remove('partial');
+    element.classList.add('expanded');
+  };
+
   const handleVote = (e) => {
     let value = review.helpful;
     if (e.target.id === 'voteFunny') {
@@ -39,10 +45,10 @@ const ReviewEntry = (props) => {
         </div>
         <div className="posted">
           <div className="view_more">
-            <a>Read More</a>
+            <a onClick={handleContent} >Read More</a>
           </div>
+          <div className="line" />
         </div>
-        <div className="line" />
         <div className="control_block">
           Was this review helpful?
           <br />
