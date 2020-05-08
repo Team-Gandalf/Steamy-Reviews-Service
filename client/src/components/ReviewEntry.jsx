@@ -35,6 +35,7 @@ const ReviewEntry = (props) => {
         </div>
         <div className="content">
           {review.description}
+          <div className="gradient" />
         </div>
         <div className="posted">
           <div className="view_more">
