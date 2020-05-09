@@ -16,6 +16,10 @@ const userSchema = mongoose.Schema({
   numProducts: { type: Number },
   numReviews: { type: Number },
   icon: { type: String },
+  player_type: { type: String },
+  xp: { type: Number },
+  friend_level: { type: Number },
+  steam_level: { type: Number },
 });
 
 const reviewSchema = mongoose.Schema({
@@ -53,6 +57,10 @@ const save = (review) => {
       numProducts: review.user.numProducts,
       numReviews: review.user.numReviews,
       icon: review.user.icon,
+      player_type: review.user.player_type,
+      xp: review.user.xp,
+      friend_level: review.user.friend_level,
+      steam_level: review.user.steam_level,
     },
   });
 

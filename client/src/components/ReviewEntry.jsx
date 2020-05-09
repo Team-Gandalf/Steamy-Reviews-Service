@@ -22,14 +22,15 @@ const ReviewEntry = (props) => {
   };
 
   return (
-    <div id="ReviewContent"  className={view}>
+    <div id="ReviewContent" className={view}>
       <ReviewProfile user={review.user} key={review.user.id} />
       <div className="rightcol">
-        <div className="vote_header">
+        <div className="vote_header tooltip">
+          <span className="tooltiptext">See Full Review</span>
           <div className="thumb">
-            <img src="./img/thumbsup.png" width="40" height="40" ></img>
+            <img src="./img/thumbsup.png" width="40" height="40" alt="thumb"/>
           </div>
-          <img className="review_source" src="./img/steamicon.png"></img>
+          <img className="review_source" src="./img/steamicon.png" alt="steamy" />
           <div className="title ellipsis">Recommended</div>
           <div className="hours ellipsis">
             {`${review.hours} gametime hours on record`}
@@ -44,7 +45,7 @@ const ReviewEntry = (props) => {
         </div>
         <div className="posted">
           <div className="view_more">
-            <a onClick={handleView} >Read More</a>
+            <a onClick={handleView}>Read More</a>
           </div>
           <div className="line" />
         </div>
@@ -73,7 +74,8 @@ const ReviewEntry = (props) => {
             <span id="voteFunny">Funny</span>
           </button>
         </div>
-        <div className="vote_info">
+        <div className="vote_info tooltip">
+          <span className="tooltiptext">See Full Review</span>
           {`${review.helpful} people found this review helpful`}
           <br />
           {`${review.funny} people found this review funny`}
