@@ -1,4 +1,4 @@
-require("regenerator-runtime/runtime");
+require('regenerator-runtime/runtime');
 const supertest = require('supertest');
 const mongoose = require('mongoose');
 const app = require('../index.js');
