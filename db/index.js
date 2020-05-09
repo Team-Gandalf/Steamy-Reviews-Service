@@ -57,6 +57,10 @@ const save = (review) => {
       numProducts: review.user.numProducts,
       numReviews: review.user.numReviews,
       icon: review.user.icon,
+      player_type: review.user.player_type,
+      xp: review.user.xp,
+      friend_level: review.user.friend_level,
+      steam_level: review.user.steam_level,
     },
   });
 
