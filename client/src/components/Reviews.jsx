@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
-
+import ReviewSummaryBar from './ReviewSummaryBar.jsx';
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
@@ -46,14 +46,18 @@ const Reviews = () => {
   };
 
   return (
-    <div className="left-col">
-      <div className="user_reviews_sub_header">
-        {`Most Helpful Reviews `}
-        <span className="user_reviews_most_helpful_days">
-          {`In the past 30 days`}
-        </span>
+    <div className="user_reviews">
+      <h2>Customer Reviews</h2>
+     <ReviewSummaryBar allReviews={allReviews} />
+      <div className="left-col">
+        <div className="user_reviews_sub_header">
+          {`Most Helpful Reviews `}
+          <span className="user_reviews_most_helpful_days">
+            {`In the past 30 days`}
+          </span>
+        </div>
+        <ReviewList allReviews={allReviews} key={id} handleVote={updateVotes} />
       </div>
-      <ReviewList allReviews={allReviews} key={id} handleVote={updateVotes} />
     </div>
   );
 };

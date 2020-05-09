@@ -26,7 +26,7 @@ const ReviewEntry = (props) => {
       <ReviewProfile user={review.user} key={review.user.id} />
       <div className="rightcol">
         <div className="vote_header tooltip">
-          <span class="tooltiptext">See Full Review</span>
+          <span className="tooltiptext">See Full Review</span>
           <div className="thumb">
             <img src="./img/thumbsup.png" width="40" height="40" ></img>
           </div>
@@ -75,7 +75,7 @@ const ReviewEntry = (props) => {
           </button>
         </div>
         <div className="vote_info tooltip">
-          <span class="tooltiptext">See Full Review</span>
+          <span className="tooltiptext">See Full Review</span>
           {`${review.helpful} people found this review helpful`}
           <br />
           {`${review.funny} people found this review funny`}
