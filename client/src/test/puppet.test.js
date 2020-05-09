@@ -1,12 +1,11 @@
 require('regenerator-runtime/runtime');
 
-describe('Google', () => {
+describe('Reviews rendering', () => {
   beforeAll(async () => {
-    await page.goto('https://google.com');
+    await page.goto('http://localhost:4200/?=1');
   });
 
-  it('should display "google" text on page', async () => {
-    const text = await page.evaluate(() => document.body.textContent);
-    expect(text).toContain('google');
+  it('should render the page', async () => {
+    await expect(page).toMatch('Customer Reviews');
   });
 });
