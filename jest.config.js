@@ -101,7 +101,7 @@ module.exports = {
       displayName: 'backend',
       testEnvironment: 'node',
       testMatch: [
-        '<rootDir>/backend.test.js',
+        '<rootDir>/server/test/backend.test.js',
       ],
       verbose: false,
     },
