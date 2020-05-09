@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReviewProfile from './ReviewProfile.jsx';
 
 const ReviewEntry = (props) => {
+  const [view, setView] = useState('partial');
   const { review, updateVote } = props;
 
   let date = new Date(review.date_posted);
   let options = { month: 'long', day: 'numeric' };
   let postedDate = date.toLocaleString('en-US', options);
+
+  const handleView = (e) => {
+    setView('expanded');
+  };
 
   const handleVote = (e) => {
     let value = review.helpful;
@@ -17,7 +22,7 @@ const ReviewEntry = (props) => {
   };
 
   return (
-    <div id="ReviewContent">
+    <div id="ReviewContent"  className={view}>
       <ReviewProfile user={review.user} key={review.user.id} />
       <div className="rightcol">
         <div className="vote_header">
@@ -35,10 +40,17 @@ const ReviewEntry = (props) => {
         </div>
         <div className="content">
           {review.description}
+          <div className="gradient" />
+        </div>
+        <div className="posted">
+          <div className="view_more">
+            <a onClick={handleView} >Read More</a>
+          </div>
+          <div className="line" />
         </div>
         <div className="control_block">
           Was this review helpful?
-          <br></br>
+          <br />
           <button
             type="button"
             className="votecontrol voteUp"
@@ -63,13 +75,14 @@ const ReviewEntry = (props) => {
         </div>
         <div className="vote_info">
           {`${review.helpful} people found this review helpful`}
-          <br></br>
+          <br />
           {`${review.funny} people found this review funny`}
-          <br></br>
+          <br />
           {`${review.thread_length} additional comments`}
-          <br></br>
+          <br />
         </div>
       </div>
+      <div style={{ clear: 'left' }} />
     </div>
   );
 };
