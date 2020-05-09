@@ -14,6 +14,10 @@ for (let i = 0; i < 100; i += 1) {
       numProducts: faker.random.number(500),
       numReviews: faker.random.number(500),
       icon: faker.image.imageUrl(),
+      player_type: faker.random.arrayElement(['Power Player', '3 Years of Service', 'Walking Tall', 'Amber']),
+      xp: faker.random.number(1000),
+      friend_level: faker.random.number(50),
+      steam_level: faker.random.number(1000),
     };
 
     let newReview = {
