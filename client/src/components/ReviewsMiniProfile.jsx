@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const ReviewsMiniProfile = (props) => {
-  const [display, setDisplay] = useState('none');
-  const { user } = props;
-
+  const { user, display } = props;
 
   return (
-    <div className="miniprofile_hover" style={{ left: '100px', top: '15000px', display: { display } }}>
+    <div className="miniprofile_hover" style={display}>
       <div className="miniprofile_hover shadow_content">
         <div className="miniprofile_hover container">
           <div className="miniprofile_hover background">
