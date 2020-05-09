@@ -1,11 +1,13 @@
 import React from 'react';
 
+import ReviewsMiniProfile from './ReviewsMiniProfile.jsx';
+
 const ReviewProfile = (props) => {
   const { user } = props;
   return (
     <div className="leftcol">
       <div className="avatar">
-        <img src={user.icon}></img>
+        <img src={user.icon} alt={user.username} />
       </div>
       <div className="username">
         {user.username}
@@ -16,6 +18,7 @@ const ReviewProfile = (props) => {
       <div className="num_reviews">
         {`${user.numReviews} reviews`}
       </div>
+      <ReviewsMiniProfile user={user} />
     </div>
   );
 };
