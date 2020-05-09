@@ -20,12 +20,12 @@ const ReviewsMiniProfile = (props) => {
           </div>
           <div className="miniprofile_hover details">
             <div className="miniprofile_hover playerdescription">
-              <div className="type">Power Player</div>
-              <div className="xp">336 XP</div>
+              <div className="type">{user.player_type}</div>
+              <div className="xp">{`${user.xp} XP`}</div>
               <div className="friendPlayerLevel">
-                <span className="friendPlayerLevelNum">21</span>
+                <span className="friendPlayerLevelNum">{user.friend_level}</span>
               </div>
-              <div className="type">Steam Level: 300</div>
+              <div className="type">{`Steam Level: ${user.steam_level}`}</div>
             </div>
           </div>
         </div>
