@@ -16,6 +16,10 @@ const userSchema = mongoose.Schema({
   numProducts: { type: Number },
   numReviews: { type: Number },
   icon: { type: String },
+  player_type: { type: String },
+  xp: { type: Number },
+  friend_level: { type: Number },
+  steam_level: { type: Number },
 });
 
 const reviewSchema = mongoose.Schema({
