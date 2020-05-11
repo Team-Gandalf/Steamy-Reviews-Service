@@ -10,7 +10,7 @@ const ReviewSummaryBar = (props) => {
       <div className="summary">
         <div className="title">Overall Reviews:</div>
         <span className="game_review_summary">Overwhelmingly Positive</span>
-        <span>{`(${allReviews.length} reviews)`}</span>
+        <span>{`(${allReviews[0].game_reviews} reviews)`}</span>
       </div>
     </div>
   );
