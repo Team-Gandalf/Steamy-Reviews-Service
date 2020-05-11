@@ -14,7 +14,7 @@ const Reviews = () => {
   const id = window.location.search.substring(2);
 
   const getAllReviews = () => {
-    axios.get(`http://localhost:4200/api/reviews/${id}`)
+    axios.get(`/api/reviews/${id}`)
       .then(({ data }) => {
         setAllReviews(data);
       })
