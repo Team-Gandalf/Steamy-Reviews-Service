@@ -73,7 +73,7 @@ const save = (review) => {
 };
 
 const find = (inputGame, callback) => {
-  Review.find({ id: inputGame }).sort({ helpful: -1 }).exec((err, res) => {
+  Review.find({ id: inputGame }).sort({ helpful: -1 }).limit(20).exec((err, res) => {
     callback(err, res);
   });
 };
