@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  'mongodb://localhost/steamy',
+  'mongodb://localhost/steamyReviews',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
