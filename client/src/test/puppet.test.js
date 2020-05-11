@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 require('regenerator-runtime/runtime');
 
 describe('Reviews rendering', () => {
