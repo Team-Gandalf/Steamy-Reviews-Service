@@ -22,10 +22,10 @@ app.get('/api/reviews/:search', (req, res) => {
 });
 
 app.patch('/api/reviews/:id', (req, res) => {
-  let id = req.params.id;
-  let reviewId = req.body.reviewId;
-  let field = req.body.field;
-  let value = req.body.value;
+  const { id } = req.params;
+  const { reviewId } = req.body;
+  const { field } = req.body;
+  const { value } = req.body;
   db.update(id, reviewId, field, value, (err, results) => {
     if (err) {
       res.status(400).send(err);
