@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable import/extensions */
+
 import React, { useState } from 'react';
 import ReviewProfile from './ReviewProfile.jsx';
 
@@ -5,11 +8,11 @@ const ReviewEntry = (props) => {
   const [view, setView] = useState('partial');
   const { review, updateVote } = props;
 
-  let date = new Date(review.date_posted);
-  let options = { month: 'long', day: 'numeric' };
-  let postedDate = date.toLocaleString('en-US', options);
+  const date = new Date(review.date_posted);
+  const options = { month: 'long', day: 'numeric' };
+  const postedDate = date.toLocaleString('en-US', options);
 
-  const handleView = (e) => {
+  const handleView = () => {
     setView('expanded');
   };
 
