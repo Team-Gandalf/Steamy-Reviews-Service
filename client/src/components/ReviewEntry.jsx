@@ -6,6 +6,8 @@ import ReviewProfile from './ReviewProfile.jsx';
 
 const ReviewEntry = (props) => {
   const [view, setView] = useState('partial');
+  const [helpful, setHelpful] = useState(false);
+  const [funny, setFunny] = useState(false);
   const { review, updateVote } = props;
 
   const date = new Date(review.date_posted);
@@ -18,10 +20,22 @@ const ReviewEntry = (props) => {
 
   const handleVote = (e) => {
     let value = review.helpful;
-    if (e.target.id === 'voteFunny') {
+    if (e.target.id === 'voteFunny' && funny === false) {
       value = review.funny;
+      setFunny(true);
+      updateVote(e.target.id, value, review.user.id);
     }
-    updateVote(e.target.id, value, review.user.id);
+
+    if (e.target.id === 'voteUp' && helpful === false) {
+      setHelpful(true);
+      updateVote(e.target.id, value, review.user.id);
+    }
+
+    if (e.target.id === 'voteDown' && helpful === true) {
+      setHelpful(false);
+      updateVote(e.target.id, value, review.user.id);
+    }
+
   };
 
   return (
