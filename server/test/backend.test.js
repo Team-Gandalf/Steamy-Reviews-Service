@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 require('regenerator-runtime/runtime');
 const supertest = require('supertest');
 const mongoose = require('mongoose');
@@ -16,14 +18,14 @@ beforeAll(async () => {
 // test get request on server
 describe('Test the GET routes', () => {
   test('It should respond 200 for the GET method', async (done) => {
-    let res = await request.get('/api/reviews/1');
+    const res = await request.get('/api/reviews/1');
     expect(res.statusCode).toBe(200);
     done();
   });
 
   // test get route to database with fake data
   test('Should find items in database', async (done) => {
-    let res = await request.get('/api/reviews/1')
+    const res = await request.get('/api/reviews/1')
       .send({
         game: 'Practical Granite Car',
       });
@@ -36,7 +38,7 @@ describe('Test the GET routes', () => {
 
 describe('Test the PATCH routes', () => {
   test('It should response the PATCH method', async (done) => {
-    let res = await request.patch('/api/reviews/1');
+    const res = await request.patch('/api/reviews/1');
     expect(res.statusCode).toBe(204);
     done();
   });
