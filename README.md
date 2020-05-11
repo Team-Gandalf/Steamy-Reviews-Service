@@ -13,13 +13,17 @@ This app:
 
 ## Getting Started
 
-npm install - g webpack
+```sh
+npm install -g webpack
 npm install
+```
 
 
 ## Running the tests
 
+```sh
 npm run test
+```
 
 ## Built With
 
@@ -29,7 +33,7 @@ npm run test
 
 ## Authors
 
-**Joshua Kim** - *Initial work* - [joshskkim](https://github.com/joshskkim)
+* **Joshua Kim** - *Initial work* - [joshskkim](https://github.com/joshskkim)
 
 * *See also the rest of the modules done by our team!*
 * **FEC-Team Gandalf** (https://github.com/Team-Gandalf)
