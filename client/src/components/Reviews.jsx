@@ -1,11 +1,17 @@
-import React, { useState, useEffect} from 'react';
+/* eslint-disable react/prop-types */
+/* eslint-disable import/extensions */
+/* eslint-disable no-undef */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-unused-vars */
+
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
 import ReviewSummaryBar from './ReviewSummaryBar.jsx';
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
-  let id = window.location.search.substring(2);
+  const id = window.location.search.substring(2);
 
   const getAllReviews = () => {
     axios.get(`http://localhost:4200/api/reviews/${id}`)
@@ -33,9 +39,9 @@ const Reviews = () => {
     }
 
     axios.patch(`http://localhost:4200/api/reviews/${id}`, {
-      field: field,
+      field,
       value: val,
-      reviewId: reviewId,
+      reviewId,
     })
       .then((results) => {
         getAllReviews();
@@ -51,9 +57,9 @@ const Reviews = () => {
       <ReviewSummaryBar allReviews={allReviews} />
       <div className="left-col">
         <div className="user_reviews_sub_header">
-          {`Most Helpful Reviews `}
+          {'Most Helpful Reviews '}
           <span className="user_reviews_most_helpful_days">
-            {`In the past 30 days`}
+            In the past 30 days
           </span>
         </div>
         <ReviewList allReviews={allReviews} key={id} handleVote={updateVotes} />

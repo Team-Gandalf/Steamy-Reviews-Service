@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable import/extensions */
+
 import React, { useState } from 'react';
 
 import ReviewsMiniProfile from './ReviewsMiniProfile.jsx';
@@ -11,7 +14,7 @@ const ReviewProfile = (props) => {
   };
 
   const handleLeave = () => {
-    setDisplay({ display: 'none'});
+    setDisplay({ display: 'none' });
   };
 
   return (
