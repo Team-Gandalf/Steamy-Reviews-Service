@@ -38,7 +38,7 @@ const Reviews = () => {
       field = 'funny';
     }
 
-    axios.patch(`http://localhost:4200/api/reviews/${id}`, {
+    axios.patch(`/api/reviews/${id}`, {
       field,
       value: val,
       reviewId,
