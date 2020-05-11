@@ -39,7 +39,7 @@ const Review = mongoose.model('Review', reviewSchema);
 
 
 const save = (review) => {
-  let entry = new Review({
+  const entry = new Review({
     id: review.id,
     game: review.game,
     game_reviews: review.game_reviews,
