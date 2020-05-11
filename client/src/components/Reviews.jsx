@@ -48,7 +48,7 @@ const Reviews = () => {
   return (
     <div className="user_reviews">
       <h2>Customer Reviews</h2>
-     <ReviewSummaryBar allReviews={allReviews} />
+      <ReviewSummaryBar allReviews={allReviews} />
       <div className="left-col">
         <div className="user_reviews_sub_header">
           {`Most Helpful Reviews `}

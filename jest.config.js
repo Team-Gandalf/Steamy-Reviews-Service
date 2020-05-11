@@ -91,7 +91,7 @@ module.exports = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  // preset: undefined,
+  // preset: "jest-puppeteer",
 
   // Run tests from one or more projects
   projects: [
@@ -101,7 +101,7 @@ module.exports = {
       displayName: 'backend',
       testEnvironment: 'node',
       testMatch: [
-        '<rootDir>/backend.test.js',
+        '<rootDir>/server/test/backend.test.js',
       ],
       verbose: false,
     },
@@ -114,6 +114,19 @@ module.exports = {
       testEnvironment: 'jsdom',
       testMatch: [
         '<rootDir>/client/src/test/reviews.test.js',
+      ],
+      verbose: false,
+    },
+    {
+      clearMocks: true,
+      coverageDirectory: 'coverage',
+      displayName: 'puppeteer',
+      globalSetup: 'jest-environment-puppeteer/setup',
+      globalTeardown: 'jest-environment-puppeteer/teardown',
+      testEnvironment: 'jest-environment-puppeteer',
+      preset: 'jest-puppeteer',
+      testMatch: [
+        '<rootDir>/client/src/test/puppet.test.js',
       ],
       verbose: false,
     },
