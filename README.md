@@ -31,8 +31,8 @@ npm run test
 
 **Joshua Kim** - *Initial work* - [joshskkim](https://github.com/joshskkim)
 
-*See also the rest of the modules done by our team!*
-**FEC-Team Gandalf** (https://github.com/Team-Gandalf)
-**Haider Syed** - *Sidebar and Body component* (https://github.com/Team-Gandalf/sidebar-body-related) - [sfshaider](https://github.com/sfshaider)
-**Brian Hampton** - *Media component* (https://github.com/Team-Gandalf/Media) - [BHamp](https://github.com/BHamp)
-**Sajjan Raj Vaidya** - *Announcements component* (https://github.com/Team-Gandalf/announcements) - [sajjanrajvaidya](https://github.com/sajjanrajvaidya)
+* *See also the rest of the modules done by our team!*
+* **FEC-Team Gandalf** (https://github.com/Team-Gandalf)
+* **Haider Syed** - *Sidebar and Body component* (https://github.com/Team-Gandalf/sidebar-body-related) - [sfshaider](https://github.com/sfshaider)
+* **Brian Hampton** - *Media component* (https://github.com/Team-Gandalf/Media) - [BHamp](https://github.com/BHamp)
+* **Sajjan Raj Vaidya** - *Announcements component* (https://github.com/Team-Gandalf/announcements) - [sajjanrajvaidya](https://github.com/sajjanrajvaidya)
