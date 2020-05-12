@@ -55,6 +55,7 @@ const save = (review) => {
     user: {
       id: review.user.id,
       username: review.user.username,
+      steam_purchaser: review.user.steam_purchaser,
       recommended: review.user.recommended,
       numProducts: review.user.numProducts,
       numReviews: review.user.numReviews,
