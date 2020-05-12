@@ -12,7 +12,7 @@ mongoose.connect(
 const userSchema = mongoose.Schema({
   id: { type: Number },
   username: { type: String },
-  steam_purchaser: { type: Boolean },
+  recommended: { type: Boolean },
   numProducts: { type: Number },
   numReviews: { type: Number },
   icon: { type: String },
@@ -26,6 +26,7 @@ const reviewSchema = mongoose.Schema({
   id: { type: Number },
   game: { type: String },
   game_reviews: { type: Number },
+  rating: { type: Number },
   hours: { type: Number },
   description: { type: String },
   helpful: { type: Number },
@@ -43,6 +44,7 @@ const save = (review) => {
     id: review.id,
     game: review.game,
     game_reviews: review.game_reviews,
+    rating: review.rating,
     hours: review.hours,
     description: review.description,
     helpful: review.helpful,
@@ -54,6 +56,7 @@ const save = (review) => {
       id: review.user.id,
       username: review.user.username,
       steam_purchaser: review.user.steam_purchaser,
+      recommended: review.user.recommended,
       numProducts: review.user.numProducts,
       numReviews: review.user.numReviews,
       icon: review.user.icon,
@@ -73,7 +76,7 @@ const save = (review) => {
 };
 
 const find = (inputGame, callback) => {
-  Review.find({ id: inputGame }).sort({ helpful: -1 }).limit(20).exec((err, res) => {
+  Review.find({ id: inputGame }).sort({ helpful: -1 }).exec((err, res) => {
     callback(err, res);
   });
 };

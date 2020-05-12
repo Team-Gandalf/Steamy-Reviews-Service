@@ -1,24 +1,41 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable import/extensions */
+
 import React, { useState } from 'react';
 import ReviewProfile from './ReviewProfile.jsx';
 
 const ReviewEntry = (props) => {
   const [view, setView] = useState('partial');
+  const [helpful, setHelpful] = useState(false);
+  const [funny, setFunny] = useState(false);
   const { review, updateVote } = props;
 
-  let date = new Date(review.date_posted);
-  let options = { month: 'long', day: 'numeric' };
-  let postedDate = date.toLocaleString('en-US', options);
+  const date = new Date(review.date_posted);
+  const options = { month: 'long', day: 'numeric' };
+  const postedDate = date.toLocaleString('en-US', options);
 
-  const handleView = (e) => {
+  const handleView = () => {
     setView('expanded');
   };
 
   const handleVote = (e) => {
     let value = review.helpful;
-    if (e.target.id === 'voteFunny') {
+    if (e.target.id === 'voteFunny' && funny === false) {
       value = review.funny;
+      setFunny(true);
+      updateVote(e.target.id, value, review.user.id);
     }
-    updateVote(e.target.id, value, review.user.id);
+
+    if (e.target.id === 'voteUp' && helpful === false) {
+      setHelpful(true);
+      updateVote(e.target.id, value, review.user.id);
+    }
+
+    if (e.target.id === 'voteDown' && helpful === true) {
+      setHelpful(false);
+      updateVote(e.target.id, value, review.user.id);
+    }
+
   };
 
   return (
@@ -27,11 +44,24 @@ const ReviewEntry = (props) => {
       <div className="rightcol">
         <div className="vote_header tooltip">
           <span className="tooltiptext">See Full Review</span>
-          <div className="thumb">
-            <img src="./img/thumbsup.png" width="40" height="40" alt="thumb"/>
-          </div>
+          {review.user.recommended ? (
+            <div className="thumb positive">
+              <img src="./img/thumbsup.png"
+                width="40" height="40"
+                alt="thumbup"
+              />
+            </div>
+          )
+            : (
+              <div className="thumb negative">
+                <img src="./img/thumbsdown.png"
+                  width="40" height="40"
+                  alt="thumbdown"
+                />
+              </div>
+            )}
           <img className="review_source" src="./img/steamicon.png" alt="steamy" />
-          <div className="title ellipsis">Recommended</div>
+          <div className="title ellipsis">{review.user.recommended ? 'Recommended' : 'Not Recommended'}</div>
           <div className="hours ellipsis">
             {`${review.hours} gametime hours on record`}
           </div>
