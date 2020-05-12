@@ -52,11 +52,18 @@ const Reviews = () => {
       });
   };
 
+  const changeView = (view) => {
+
+  };
+
   return (
     <div className="user_reviews">
       <h2>Customer Reviews</h2>
       <ReviewSummaryBar allReviews={allReviews} />
-      <ReviewFilter />
+      <ReviewFilter
+        review={allReviews[0] ? allReviews[0] : null}
+        changeView={changeView}
+      />
       <div className="left-col">
         <div className="user_reviews_sub_header">
           {'Most Helpful Reviews '}
