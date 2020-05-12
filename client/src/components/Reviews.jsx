@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
 import ReviewSummaryBar from './ReviewSummaryBar.jsx';
+import ReviewFilter from './ReviewFilter.jsx';
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
@@ -55,6 +56,7 @@ const Reviews = () => {
     <div className="user_reviews">
       <h2>Customer Reviews</h2>
       <ReviewSummaryBar allReviews={allReviews} />
+      <ReviewFilter />
       <div className="left-col">
         <div className="user_reviews_sub_header">
           {'Most Helpful Reviews '}
