@@ -4,7 +4,6 @@ const db = require('./index.js');
 for (let i = 0; i < 100; i += 1) {
   const currentGame = faker.commerce.productName();
   const playerTypes = ['Power Player', '3 Years of Service', 'Walking Tall', 'Amber'];
-  const ratings = ['Overwhelmingly Positive', 'Very Positive', 'Mostly Positive', 'Mixed', 'Mostly Negative', 'Very Negative', 'Overwhelmingly Negative'];
 
   const reviewCount = Math.floor(Math.random() * 50);
 
