@@ -33,12 +33,12 @@ const ReviewFilter = (props) => {
               <br />
               <input type="radio" name="review_type" value="positive" id="review_type_positive" onChange={handleChange} />
               <label htmlFor="review_type_positive">
-                {`Positive (${review.rating})`}
+                {`Positive (${review.rating - 1})`}
               </label>
               <br />
               <input type="radio" name="review_type" value="negative" id="review_type_negative" onChange={handleChange} />
               <label htmlFor="review_type_negative">
-                {`Negative (${review.game_reviews - review.rating})`}
+                {`Negative (${review.game_reviews - review.rating + 1})`}
               </label>
               <br />
             </div>

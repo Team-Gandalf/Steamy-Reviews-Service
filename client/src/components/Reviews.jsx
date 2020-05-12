@@ -12,6 +12,8 @@ import ReviewFilter from './ReviewFilter.jsx';
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
+  const [viewActive, setView] = useState(false);
+  const [filteredReviews, setFilter] = useState([]);
   const id = window.location.search.substring(2);
 
   const getAllReviews = () => {
@@ -53,7 +55,23 @@ const Reviews = () => {
   };
 
   const changeView = (view) => {
+    let oldReviews;
+    let filtered;
 
+    if (view === 'positive') {
+      oldReviews = allReviews;
+      filtered = allReviews.filter((review) => review.user.recommended);
+      setView(true);
+    } else if (view === 'negative') {
+      oldReviews = allReviews;
+      filtered = allReviews.filter((review) => !review.user.recommended);
+      setView(true);
+    } else {
+      filtered = allReviews;
+      setView(false);
+    }
+
+    setFilter(filtered);
   };
 
   return (
@@ -71,7 +89,11 @@ const Reviews = () => {
             In the past 30 days
           </span>
         </div>
-        <ReviewList allReviews={allReviews} key={id} handleVote={updateVotes} />
+        <ReviewList
+          allReviews={viewActive ? filteredReviews : allReviews}
+          key={id}
+          handleVote={updateVotes}
+        />
       </div>
     </div>
   );
