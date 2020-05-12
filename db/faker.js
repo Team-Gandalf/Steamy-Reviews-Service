@@ -3,6 +3,8 @@ const db = require('./index.js');
 
 for (let i = 0; i < 100; i += 1) {
   const currentGame = faker.commerce.productName();
+  const playerTypes = ['Power Player', '3 Years of Service', 'Walking Tall', 'Amber'];
+  const ratings = ['Overwhelmingly Positive', 'Very Positive', 'Mostly Positive', 'Mixed', 'Mostly Negative', 'Very Negative', 'Overwhelmingly Negative'];
 
   const reviewCount = Math.floor(Math.random() * 50);
 
@@ -14,7 +16,7 @@ for (let i = 0; i < 100; i += 1) {
       numProducts: faker.random.number(500),
       numReviews: faker.random.number(500),
       icon: faker.image.imageUrl(),
-      player_type: faker.random.arrayElement(['Power Player', '3 Years of Service', 'Walking Tall', 'Amber']),
+      player_type: faker.random.arrayElement(playerTypes),
       xp: faker.random.number(1000),
       friend_level: faker.random.number(50),
       steam_level: faker.random.number(1000),
@@ -24,6 +26,7 @@ for (let i = 0; i < 100; i += 1) {
       id: i,
       game: currentGame,
       game_reviews: reviewCount,
+      rating: faker.random.(reviewCount);
       hours: faker.finance.amount(0, 100, 1),
       description: faker.lorem.paragraphs(),
       helpful: faker.random.number(1000),
