@@ -18,4 +18,5 @@ workflows:
     jobs:
       - shellcheck/check
       - build-and-test:
-          requires: shellcheck/check
+          requires:
+            - shellcheck/check
