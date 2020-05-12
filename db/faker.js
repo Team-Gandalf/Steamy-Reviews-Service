@@ -5,7 +5,7 @@ for (let i = 0; i < 100; i += 1) {
   const currentGame = faker.commerce.productName();
   const playerTypes = ['Power Player', '3 Years of Service', 'Walking Tall', 'Amber'];
 
-  const reviewCount = Math.floor(Math.random() * 50);
+  const reviewCount = Math.floor(Math.random(5) * 50);
 
   for (let j = 0; j < reviewCount; j += 1) {
     const newUser = {
