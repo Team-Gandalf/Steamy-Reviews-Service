@@ -8,7 +8,7 @@ const ReviewSummaryBar = (props) => {
   let steamRating = 'Overwhelmingly Negative';
 
   if (allReviews[0]) {
-    const percent = (allReviews[0].ratings / allReviews[0].game_reviews);
+    const percent = (allReviews[0].rating / allReviews[0].game_reviews);
 
     if (percent > 0.9) {
       steamRating = 'Overwhelmingly Positive';
