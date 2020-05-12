@@ -11,7 +11,7 @@ for (let i = 0; i < 100; i += 1) {
     const newUser = {
       id: j,
       username: faker.internet.userName(),
-      steam_purchaser: faker.random.boolean(),
+      recommended: faker.random.boolean(),
       numProducts: faker.random.number(500),
       numReviews: faker.random.number(500),
       icon: faker.image.imageUrl(),

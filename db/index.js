@@ -12,7 +12,7 @@ mongoose.connect(
 const userSchema = mongoose.Schema({
   id: { type: Number },
   username: { type: String },
-  steam_purchaser: { type: Boolean },
+  recommended: { type: Boolean },
   numProducts: { type: Number },
   numReviews: { type: Number },
   icon: { type: String },
@@ -55,7 +55,7 @@ const save = (review) => {
     user: {
       id: review.user.id,
       username: review.user.username,
-      steam_purchaser: review.user.steam_purchaser,
+      recommended: review.user.recommended,
       numProducts: review.user.numProducts,
       numReviews: review.user.numReviews,
       icon: review.user.icon,
