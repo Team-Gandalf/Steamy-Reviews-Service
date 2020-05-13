@@ -6,7 +6,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const db = require('../db/index.js');
 
-app.use(express.static(`${__dirname}/../client/dist`));
+app.use(express.static(`${__dirname}/../client/public`));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

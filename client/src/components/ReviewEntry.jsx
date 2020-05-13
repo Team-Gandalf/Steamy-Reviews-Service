@@ -46,21 +46,29 @@ const ReviewEntry = (props) => {
           <span className="tooltiptext">See Full Review</span>
           {review.user.recommended ? (
             <div className="thumb positive">
-              <img src="./img/thumbsup.png"
-                width="40" height="40"
+              <img
+                src="./img/thumbsup.png"
+                width="40"
+                height="40"
                 alt="thumbup"
               />
             </div>
           )
             : (
               <div className="thumb negative">
-                <img src="./img/thumbsdown.png"
-                  width="40" height="40"
+                <img
+                  src="./img/thumbsdown.png"
+                  width="40"
+                  height="40"
                   alt="thumbdown"
                 />
               </div>
             )}
-          <img className="review_source" src="./img/steamicon.png" alt="steamy" />
+          <img
+            className="review_source"
+            src="./img/steamicon.png"
+            alt="steamy"
+          />
           <div className="title ellipsis">{review.user.recommended ? 'Recommended' : 'Not Recommended'}</div>
           <div className="hours ellipsis">
             {`${review.hours} gametime hours on record`}

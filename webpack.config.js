@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'development',
   entry: `${__dirname}/client/src/index.jsx`,
   module: {
     rules: [
@@ -15,10 +16,23 @@ module.exports = {
           },
         },
       },
+      {
+        test: [/\.css$/],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+            },
+          },
+        ],
+      },
     ],
   },
   output: {
     filename: 'bundle.js',
-    path: `${__dirname}/client/dist`,
+    path: `${__dirname}/client/public/dist`,
   },
 };
