@@ -385,7 +385,7 @@ div .rightcol {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("./img/votecontrolicons.png") no-repeat top left;
+  background: url("http://54.67.101.150:4200/img/votecontrolicons.png") no-repeat top left;
   vertical-align: text-top;
   display: table-cell;
   position: relative;
