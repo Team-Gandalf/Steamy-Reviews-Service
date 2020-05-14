@@ -47,7 +47,7 @@ const ReviewEntry = (props) => {
           {review.user.recommended ? (
             <div className="thumb positive">
               <img
-                src="./img/thumbsup.png"
+                src="http://54.67.101.150:4200/img/thumbsup.png"
                 width="40"
                 height="40"
                 alt="thumbup"
@@ -57,7 +57,7 @@ const ReviewEntry = (props) => {
             : (
               <div className="thumb negative">
                 <img
-                  src="./img/thumbsdown.png"
+                  src="http://54.67.101.150:4200/img/thumbsdown.png"
                   width="40"
                   height="40"
                   alt="thumbdown"
@@ -66,7 +66,7 @@ const ReviewEntry = (props) => {
             )}
           <img
             className="review_source"
-            src="./img/steamicon.png"
+            src="http://54.67.101.150:4200/img/steamicon.png"
             alt="steamy"
           />
           <div className="title ellipsis">{review.user.recommended ? 'Recommended' : 'Not Recommended'}</div>

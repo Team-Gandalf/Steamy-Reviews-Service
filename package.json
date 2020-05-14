@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -d --watch",
     "seed": "node db/faker.js",
-    "server": "nodemon server/server.js -i client",
+    "start": "nodemon server/server.js -i client",
     "test": "jest --detectOpenHandles --coverage --watch"
   },
   "repository": {
