@@ -416,7 +416,7 @@ label {
   background-position: -224px -16px;
 }
 
-button {
+.control_block button {
   border-radius: 2px;
   border: none;
   padding: 1px;
@@ -435,11 +435,11 @@ button > span {
   padding: 16px;
 }
 
-button:hover {
+.control_block button:hover {
   filter: saturate(4);
 }
 
-button:focus {
+.control_block button:focus {
   background-color: #97d1f3;
   outline: none;
   box-shadow: none;
