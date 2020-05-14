@@ -90,7 +90,7 @@ const Reviews = () => {
           </span>
         </div>
         <ReviewList
-          allReviews={viewActive ? filteredReviews : allReviews}
+          allReviews={viewActive ? filteredReviews.slice(0, 8) : allReviews.slice(0, 8)}
           key={id}
           handleVote={updateVotes}
         />
