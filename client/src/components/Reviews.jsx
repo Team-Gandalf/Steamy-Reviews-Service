@@ -76,7 +76,7 @@ const Reviews = () => {
 
   return (
     <div className="user_reviews">
-      <h2>Customer Reviews</h2>
+      <h2 className="h2reviews">Customer Reviews</h2>
       <ReviewSummaryBar allReviews={allReviews} />
       <ReviewFilter
         review={allReviews[0] ? allReviews[0] : null}

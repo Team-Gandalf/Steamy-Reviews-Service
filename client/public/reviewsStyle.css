@@ -1,21 +1,22 @@
 * {
   padding: 0;
   margin: 0;
+  border: 0;
 }
 
-body {
+/* body {
   background-color: #1B2838;
+} */
+
+#reviews {
   color: #c6d4df;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-size: 12px;
+  display: inline-flex;
 }
 
-div {
-  display: block;
-}
-
-h2 {
+.h2reviews {
   border-top: 1px solid black;
   margin-bottom: 0px;
   font-size: 14px;
@@ -169,7 +170,7 @@ label {
   position: absolute;
 }
 
-div #ReviewContent {
+#ReviewContent {
   border-bottom: 26px solid #1B2838;
 }
 
@@ -242,7 +243,7 @@ div #ReviewContent {
   position: relative;
 }
 
-div .rightcol {
+.rightcol {
   width: 308px;
   margin-left: 14px;
   float: right;
@@ -385,7 +386,7 @@ div .rightcol {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("./img/votecontrolicons.png") no-repeat top left;
+  background: url("http://54.67.101.150:4200/img/votecontrolicons.png") no-repeat top left;
   vertical-align: text-top;
   display: table-cell;
   position: relative;
