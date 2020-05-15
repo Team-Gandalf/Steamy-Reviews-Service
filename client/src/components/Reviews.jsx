@@ -14,6 +14,7 @@ import ReviewFilter from './ReviewFilter.jsx';
 
 // Styled Components
 import {
+  GlobalStyle,
   ReviewsBackground,
   Title,
   LeftCol,
@@ -87,6 +88,9 @@ const Reviews = () => {
 
   return (
     <ReviewsBackground>
+      <>
+        <GlobalStyle />
+      </>
       <Title>Customer Reviews</Title>
       <ReviewSummaryBar allReviews={allReviews} />
       <ReviewFilter

@@ -126,7 +126,7 @@ const ReviewEntry = (props) => {
           </Button>
         </ControlBlock>
         <VoteInfo>
-          <ToolTipText>See Full Review</ToolTipText>
+          <TooltipText>See Full Review</TooltipText>
           {`${review.helpful} people found this review helpful`}
           <br />
           {`${review.funny} people found this review funny`}

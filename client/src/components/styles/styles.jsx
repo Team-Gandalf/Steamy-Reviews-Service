@@ -1,4 +1,12 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
+  * {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+`;
 
 export const ReviewsBackground = styled.div`
   color: #c6d4df;
@@ -36,7 +44,7 @@ export const MostHelpfulReviews = styled.div`
   text-transform: uppercase;
   padding-bottom: 5px;
   letter-spacing: 2px;
-  position: relative;
+  position: inline-block;
 `;
 
 export const MostHelpfulDays = styled.span`

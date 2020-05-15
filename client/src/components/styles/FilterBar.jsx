@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FilterBar = styled.div`
-  position: relative;
+  position: absolute;
 `;
 
 export const FilterMenu = styled.div`
