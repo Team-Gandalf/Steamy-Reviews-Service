@@ -4,17 +4,18 @@
 import React from 'react';
 import ReviewEntry from './ReviewEntry.jsx';
 
+import ReviewBox from './styles/styles.jsx';
+
 const ReviewList = (props) => {
   const { allReviews, handleVote } = props;
 
   return (
-    <div className="review_box">
+    <ReviewBox>
       {allReviews.map((review) => {
         return <ReviewEntry review={review} key={review.user.id} updateVote={handleVote} />;
       })}
-    </div>
+    </ReviewBox>
   );
 };
-
 
 export default ReviewList;

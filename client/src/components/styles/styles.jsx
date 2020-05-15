@@ -44,3 +44,10 @@ export const MostHelpfulDays = styled.span`
   font-size: 14px;
   color: #56707f;
 `;
+
+export const ReviewBox = styled.div`
+  background-color: rgba( 0, 0, 0, 0.2 );
+  margin-bottom: 26px;
+  min-height: 100%;
+  position: absolute;
+`;
