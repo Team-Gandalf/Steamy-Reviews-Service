@@ -4,7 +4,7 @@
 import React from 'react';
 import ReviewEntry from './ReviewEntry.jsx';
 
-import ReviewBox from './styles/styles.jsx';
+import { ReviewBox } from './styles/styles.jsx';
 
 const ReviewList = (props) => {
   const { allReviews, handleVote } = props;

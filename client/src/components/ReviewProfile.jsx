@@ -5,6 +5,15 @@ import React, { useState } from 'react';
 
 import ReviewsMiniProfile from './ReviewsMiniProfile.jsx';
 
+import {
+  Profile,
+  Avatar,
+  AvatarImg,
+  Username,
+  NumOwnedGames,
+  NumReviews,
+} from './styles/ReviewProfile.jsx';
+
 const ReviewProfile = (props) => {
   const [display, setDisplay] = useState({ display: 'none' });
   const { user } = props;
@@ -18,29 +27,29 @@ const ReviewProfile = (props) => {
   };
 
   return (
-    <div className="leftcol">
-      <div className="avatar">
-        <img
+    <Profile>
+      <Avatar>
+        <AvatarImg
           src={user.icon}
           alt={user.username}
           onMouseEnter={handleEnter}
           onMouseLeave={handleLeave}
         />
-      </div>
-      <div className="username">
+      </Avatar>
+      <Username>
         {user.username}
-      </div>
-      <div className="num_owned_games">
+      </Username>
+      <NumOwnedGames>
         {`${user.numProducts} products in account`}
-      </div>
-      <div className="num_reviews">
+      </NumOwnedGames>
+      <NumReviews>
         {`${user.numReviews} reviews`}
-      </div>
+      </NumReviews>
       <ReviewsMiniProfile
         user={user}
         display={display}
       />
-    </div>
+    </Profile>
   );
 };
 

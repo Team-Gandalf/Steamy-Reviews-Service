@@ -4,6 +4,17 @@
 import React, { useState } from 'react';
 import ReviewProfile from './ReviewProfile.jsx';
 
+import {
+  ReviewContent,
+  TooltipText,
+  VoteHeader,
+  Thumb,
+  ReviewSource,
+  VoteHeaderTitle,
+  HoursPlayed,
+  DatePosted,
+} from './styles/ReviewEntry.jsx';
+
 const ReviewEntry = (props) => {
   const [view, setView] = useState('partial');
   const [helpful, setHelpful] = useState(false);
@@ -41,42 +52,44 @@ const ReviewEntry = (props) => {
   return (
     <div id="ReviewContent" className={view}>
       <ReviewProfile user={review.user} key={review.user.id} />
-      <div className="rightcol">
-        <div className="vote_header tooltip">
-          <span className="tooltiptext">See Full Review</span>
+      <ReviewContent>
+        <VoteHeader>
+          <TooltipText>See Full Review</TooltipText>
           {review.user.recommended ? (
-            <div className="thumb positive">
+            <Thumb>
               <img
                 src="http://54.67.101.150:4200/img/thumbsup.png"
                 width="40"
                 height="40"
                 alt="thumbup"
               />
-            </div>
+            </Thumb>
           )
             : (
-              <div className="thumb negative">
+              <Thumb>
                 <img
                   src="http://54.67.101.150:4200/img/thumbsdown.png"
                   width="40"
                   height="40"
                   alt="thumbdown"
                 />
-              </div>
+              </Thumb>
             )}
-          <img
+          <ReviewSource
             className="review_source"
             src="http://54.67.101.150:4200/img/steamicon.png"
             alt="steamy"
           />
-          <div className="title ellipsis">{review.user.recommended ? 'Recommended' : 'Not Recommended'}</div>
-          <div className="hours ellipsis">
+          <VoteHeaderTitle>
+            {review.user.recommended ? 'Recommended' : 'Not Recommended'}
+          </VoteHeaderTitle>
+          <HoursPlayed>
             {`${review.hours} gametime hours on record`}
-          </div>
-        </div>
-        <div className="postedDate">
+          </HoursPlayed>
+        </VoteHeader>
+        <DatePosted>
           {`Posted: ${postedDate}`}
-        </div>
+        </DatePosted>
         <div className="content">
           {review.description}
           <div className="gradient" />
@@ -121,7 +134,7 @@ const ReviewEntry = (props) => {
           {`${review.thread_length} additional comments`}
           <br />
         </div>
-      </div>
+      </ReviewContent>
       <div style={{ clear: 'left' }} />
     </div>
   );
