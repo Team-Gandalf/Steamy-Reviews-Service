@@ -8,12 +8,13 @@
   background-color: #1B2838;
 } */
 
-#reviews {
+.user_reviews {
   color: #c6d4df;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-size: 12px;
-  display: inline-flex;
+  display: block;
+  background-color: #1B2838;
 }
 
 .h2reviews {
