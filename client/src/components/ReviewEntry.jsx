@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import ReviewProfile from './ReviewProfile.jsx';
 
 import {
+  Review,
   ReviewContent,
   TooltipText,
   VoteHeader,
@@ -13,6 +14,18 @@ import {
   VoteHeaderTitle,
   HoursPlayed,
   DatePosted,
+  Content,
+  Gradient,
+  ViewMore,
+  Posted,
+  Line,
+  ControlBlock,
+  Button,
+  VoteUp,
+  VoteDown,
+  VoteFunny,
+  VoteInfo,
+  Break,
 } from './styles/ReviewEntry.jsx';
 
 const ReviewEntry = (props) => {
@@ -50,7 +63,7 @@ const ReviewEntry = (props) => {
   };
 
   return (
-    <div id="ReviewContent" className={view}>
+    <Review>
       <ReviewProfile user={review.user} key={review.user.id} />
       <ReviewContent>
         <VoteHeader>
@@ -76,7 +89,6 @@ const ReviewEntry = (props) => {
               </Thumb>
             )}
           <ReviewSource
-            className="review_source"
             src="http://54.67.101.150:4200/img/steamicon.png"
             alt="steamy"
           />
@@ -90,53 +102,41 @@ const ReviewEntry = (props) => {
         <DatePosted>
           {`Posted: ${postedDate}`}
         </DatePosted>
-        <div className="content">
+        <Content props={view}>
           {review.description}
-          <div className="gradient" />
-        </div>
-        <div className="posted">
-          <div className="view_more">
-            <a onClick={handleView}>Read More</a>
-          </div>
-          <div className="line" />
-        </div>
-        <div className="control_block">
+          <Gradient props={view} />
+        </Content>
+        <Posted props={view}>
+          <ViewMore props={view} onClick={handleView}>
+            Read More
+          </ViewMore>
+          <Line />
+        </Posted>
+        <ControlBlock>
           Was this review helpful?
           <br />
-          <button
-            type="button"
-            className="votecontrol voteUp"
-            onClick={handleVote}
-          >
-            <span id="voteUp">Yes</span>
-          </button>
-          <button
-            type="button"
-            className="votecontrol voteDown"
-            onClick={handleVote}
-          >
-            <span id="voteDown">No</span>
-          </button>
-          <button
-            type="button"
-            className="votecontrol voteFunny"
-            onClick={handleVote}
-          >
-            <span id="voteFunny">Funny</span>
-          </button>
-        </div>
-        <div className="vote_info tooltip">
-          <span className="tooltiptext">See Full Review</span>
+          <Button onClick={handleVote}>
+            <VoteUp id="voteUp">Yes</VoteUp>
+          </Button>
+          <Button onClick={handleVote}>
+            <VoteDown id="voteDown">No</VoteDown>
+          </Button>
+          <Button onClick={handleVote}>
+            <VoteFunny id="voteFunny">Funny</VoteFunny>
+          </Button>
+        </ControlBlock>
+        <VoteInfo>
+          <ToolTipText>See Full Review</ToolTipText>
           {`${review.helpful} people found this review helpful`}
           <br />
           {`${review.funny} people found this review funny`}
           <br />
           {`${review.thread_length} additional comments`}
           <br />
-        </div>
+        </VoteInfo>
       </ReviewContent>
-      <div style={{ clear: 'left' }} />
-    </div>
+      <Break />
+    </Review>
   );
 };
 
