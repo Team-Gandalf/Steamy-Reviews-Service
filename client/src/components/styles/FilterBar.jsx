@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FilterBar = styled.div`
-  position: absolute;
+  position: relative;
 `;
 
 export const FilterMenu = styled.div`
@@ -9,8 +9,6 @@ export const FilterMenu = styled.div`
   padding: 10px;
   margin-bottom: 30px;
   padding-bottom: 15px;
-  padding: 0px;
-  position: absolute;
 `;
 
 export const ReviewType = styled.div`
@@ -38,9 +36,9 @@ export const ReviewTypeMenu = styled.div`
   line-height: 20px;
   z-index: 10;
 
-  &:hover {
+  ${ReviewType}:hover & {
+    background-color: #c6d4df;
     display: block;
-	  background-color: #c6d4df;
   }
 `;
 

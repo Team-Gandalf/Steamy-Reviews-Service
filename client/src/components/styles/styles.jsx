@@ -6,15 +6,17 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     border: 0;
   }
+  body {
+    background-color: #1B2838;
+    color: #c6d4df;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+  }
 `;
 
 export const ReviewsBackground = styled.div`
-  color: #c6d4df;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: normal;
-  font-size: 12px;
   display: block;
-  background-color: #1B2838;
 `;
 
 export const Title = styled.h2`
@@ -44,7 +46,7 @@ export const MostHelpfulReviews = styled.div`
   text-transform: uppercase;
   padding-bottom: 5px;
   letter-spacing: 2px;
-  position: inline-block;
+  position: relative;
 `;
 
 export const MostHelpfulDays = styled.span`
