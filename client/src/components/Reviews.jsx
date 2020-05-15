@@ -6,9 +6,20 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
+// Imported Components
 import ReviewList from './ReviewList.jsx';
 import ReviewSummaryBar from './ReviewSummaryBar.jsx';
 import ReviewFilter from './ReviewFilter.jsx';
+
+// Styled Components
+import {
+  ReviewsBackground,
+  Title,
+  LeftCol,
+  MostHelpfulReviews,
+  MostHelpfulDays,
+} from './styles/styles.jsx';
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
@@ -75,27 +86,27 @@ const Reviews = () => {
   };
 
   return (
-    <div className="user_reviews">
-      <h2 className="h2reviews">Customer Reviews</h2>
+    <ReviewsBackground>
+      <Title>Customer Reviews</Title>
       <ReviewSummaryBar allReviews={allReviews} />
       <ReviewFilter
         review={allReviews[0] ? allReviews[0] : null}
         changeView={changeView}
       />
-      <div className="left-col">
-        <div className="user_reviews_sub_header">
+      <LeftCol>
+        <MostHelpfulReviews>
           {'Most Helpful Reviews '}
-          <span className="user_reviews_most_helpful_days">
+          <MostHelpfulDays>
             In the past 30 days
-          </span>
-        </div>
+          </MostHelpfulDays>
+        </MostHelpfulReviews>
         <ReviewList
           allReviews={viewActive ? filteredReviews.slice(0, 8) : allReviews.slice(0, 8)}
           key={id}
           handleVote={updateVotes}
         />
-      </div>
-    </div>
+      </LeftCol>
+    </ReviewsBackground>
   );
 };
 
