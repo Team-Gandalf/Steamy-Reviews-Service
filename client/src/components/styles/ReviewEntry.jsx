@@ -19,10 +19,10 @@ export const TooltipText = styled.span`
   visibility: hidden;
   right: 10px;
   position: absolute;
-	padding: 0px 10px;
-	box-shadow: 0 0 5px #000;
-	background: -webkit-linear-gradient( top, #e3eaef 5%, #c7d5e0 95%);
-	background: linear-gradient( to bottom, #e3eaef 5%, #c7d5e0 95%);
+  padding: 0px 10px;
+  box-shadow: 0 0 5px #000;
+  background: -webkit-linear-gradient( top, #e3eaef 5%, #c7d5e0 95%);
+  background: linear-gradient( to bottom, #e3eaef 5%, #c7d5e0 95%);
   z-index: 1;
   color:black;
   border-radius: 6px;
@@ -101,12 +101,11 @@ export const Content = styled.div`
 
   ${(props) => props.partial && css`
     max-height: 200px;
-    overflow: visible;
     position: relative;
   `}
 
   ${(props) => props.expanded && css`
-    display: none;
+    overflow: visible;
   `}
 `;
 
