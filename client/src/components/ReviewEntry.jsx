@@ -102,16 +102,34 @@ const ReviewEntry = (props) => {
         <DatePosted>
           {`Posted: ${postedDate}`}
         </DatePosted>
-        <Content props={view}>
-          {review.description}
-          <Gradient props={view} />
-        </Content>
-        <Posted props={view}>
-          <ViewMore props={view} onClick={handleView}>
-            Read More
-          </ViewMore>
-          <Line />
-        </Posted>
+        {(view === 'partial') ? (
+          <>
+            <Content partial>
+              {review.description}
+              <Gradient partial />
+            </Content>
+            <Posted partial>
+              <ViewMore partial onClick={handleView}>
+                Read More
+              </ViewMore>
+              <Line />
+            </Posted>
+          </>
+        )
+          : (
+            <>
+              <Content expanded>
+                {review.description}
+                <Gradient expanded />
+              </Content>
+              <Posted expanded>
+                <ViewMore expanded onClick={handleView}>
+                  Read More
+                </ViewMore>
+                <Line />
+              </Posted>
+            </>
+          )}
         <ControlBlock>
           Was this review helpful?
           <br />
@@ -135,7 +153,6 @@ const ReviewEntry = (props) => {
           <br />
         </VoteInfo>
       </ReviewContent>
-      <Break />
     </Review>
   );
 };

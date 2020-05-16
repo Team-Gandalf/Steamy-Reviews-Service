@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Review = styled.div`
   border-bottom: 26px solid #1B2838;
@@ -98,19 +98,19 @@ export const Content = styled.div`
   overflow-wrap: break-word;
   overflow: hidden;
 
-  ${({ partial }) => partial && `
+  ${(props) => props.partial && css`
     max-height: 200px;
     overflow: visible;
     position: relative;
   `}
 
-  ${({ expanded }) => expanded && `
+  ${(props) => props.expanded && css`
     display: none;
   `}
 `;
 
 export const Gradient = styled.div`
-  ${({ partial }) => partial && `
+  ${(props) => props.partial && css`
     display: block;
     position: absolute;
     bottom: 0px;
@@ -121,13 +121,13 @@ export const Gradient = styled.div`
     background: linear-gradient( to bottom, rgba( 22,32,45,0) 5%, rgba( 22,32,45,.95) 95%);
   `}
 
-  ${({ expanded }) => expanded && `
+  ${(props) => props.expanded && css`
     display: none;
   `}
 `;
 
 export const ViewMore = styled.div`
-  ${({ partial }) => partial && `
+  ${(props) => props.partial && css`
     color: #67c1f5;
     text-transform: uppercase;
     font-style: normal;
@@ -136,13 +136,13 @@ export const ViewMore = styled.div`
     cursor: pointer;
   `}
 
-  ${({ expanded }) => expanded && `
+  ${(props) => props.expanded && css`
     display: none;
   `}
 `;
 
 export const Posted = styled.div`
-  ${({ expanded }) => expanded && `
+  ${(props) => props.expanded && css`
     font-size: 10px;
     font-style: italic;
     color: #626366;
