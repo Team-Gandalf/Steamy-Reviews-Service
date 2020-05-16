@@ -35,7 +35,7 @@ export const VoteHeader = styled.div`
   background: rgba( 0, 0, 0, 0.2 );
   height: 40px;
 
-  & ${TooltipText}:hover {
+  &:hover ${TooltipText} {
     visibility: visible;
     left: 50%;
     cursor: pointer;
@@ -231,7 +231,7 @@ export const VoteInfo = styled.div`
   background-color: rgba( 0, 0, 0, 0.2 );
   min-height: 16px;
 
-  & ${TooltipText}:hover {
+  &:hover ${TooltipText} {
     visibility: visible;
     left: 50%;
     cursor: pointer;
