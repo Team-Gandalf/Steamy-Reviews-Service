@@ -56,16 +56,16 @@ export const PlayerSection = styled.div`
 export const MiniAvatar = styled.div`
   width: 40px;
   height: 40px;
-  background: none;
   border-bottom-width: 2px;
   border-bottom-style: solid;
 `;
 
-export const MiniAvatarImg = styled.div`
-  width: 40px;
-  height: 40px;
-  box-sizing: border-box;
-  background: none;
+export const MiniAvatarImg = styled.img`
+  width: 32px;
+  height: 32px;
+  padding: 1px;
+  border-radius: 0;
+  border: none;
 `;
 
 export const MiniPlayerContent = styled.div`
@@ -91,15 +91,10 @@ export const MiniProfileDetails = styled.div`
 `;
 
 export const PlayerDescription = styled.div`
-  display: flex;
-  flex-direction: row;
-  height: 34px;
-  padding-left: 16px;
   margin-left: 12px;
   margin-top: auto;
   margin-bottom: auto;
   font-size: 14px;
-  overflow: hidden;
   white-space: nowrap;
 `;
 
