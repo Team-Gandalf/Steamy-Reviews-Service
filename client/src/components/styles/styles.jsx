@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const ReviewsBackground = styled.div`
   display: block;
+  padding-top: 1rem;
 `;
 
 export const Title = styled.h2`

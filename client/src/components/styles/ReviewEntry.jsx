@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Review = styled.div`
   border-bottom: 26px solid #1B2838;
-  display: inline-flex;
+  display: flex;
 `;
 
 export const ReviewContent = styled.div`
@@ -164,17 +164,14 @@ export const Button = styled.button`
   border-radius: 2px;
   border: none;
   padding: 1px;
-  display: inline-block;
   cursor: pointer;
   text-decoration: none;
   color: #66c0f4;
   margin: 16px;
   width: 16px;
   height: 16px;
-  background: url("http://54.67.101.150:4200/img/votecontrolicons.png") no-repeat top left;
   vertical-align: text-top;
-  display: table-cell;
-  position: relative;
+  background-color: transparent;
 
   &:hover {
     filter: saturate(4);
@@ -190,12 +187,13 @@ export const Button = styled.button`
 export const VoteUp = styled.span`
   padding: 0 5px;
   font-size: 12px;
-  line-height: 20px;
   padding: 16px;
-  background-position: -112px -16px;
+  background: url('./img/tu.png') no-repeat;
+  background-position: left;
 
   &:hover {
-    background-position: -144px -16px;
+    background: url('./img/tuclicked.png') no-repeat;
+    background-position: left;
   }
 `;
 
@@ -204,10 +202,12 @@ export const VoteDown = styled.span`
   font-size: 12px;
   line-height: 20px;
   padding: 16px;
-  background-position: -64px -16px;
+  background: url('./img/td.png') no-repeat;
+  background-position: left;
 
   &:hover {
-    background-position: -80px -16px;
+    background: url('./img/tdclicked.png') no-repeat;
+    background-position: left;
   }
 `;
 
@@ -216,10 +216,12 @@ export const VoteFunny = styled.span`
   font-size: 12px;
   line-height: 20px;
   padding: 16px;
-  background-position: -208px -16px;
+  background: url('./img/happy.png') no-repeat;
+  background-position: left;
 
   &:hover {
-    background-position: -224px -16px;
+    background: url('./img/happyclicked.png') no-repeat;
+    background-position: left;
   }
 `;
 
