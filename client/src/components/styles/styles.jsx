@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const ReviewsBackground = styled.div`
   display: block;
-  padding-top: 1rem;
+  padding-top: 10rem;
 `;
 
 export const Title = styled.h2`
@@ -30,6 +30,7 @@ export const Title = styled.h2`
   letter-spacing: 2px;
   font-weight: normal;
   padding-top: 2px;
+  width: 616px;
 `;
 
 export const LeftCol = styled.div`

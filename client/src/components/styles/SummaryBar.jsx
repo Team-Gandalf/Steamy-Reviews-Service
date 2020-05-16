@@ -8,6 +8,7 @@ export const SummaryBar = styled.div`
   box-shadow: 0 0 5px black;
   position: inline-block;
   min-height: 38px;
+  width: 616px;
 `;
 
 export const Summary = styled.div`
