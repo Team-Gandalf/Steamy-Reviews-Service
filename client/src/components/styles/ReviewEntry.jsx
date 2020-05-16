@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Review = styled.div`
   border-bottom: 26px solid #1B2838;
+  display: inline-flex;
 `;
 
 export const ReviewContent = styled.div`
