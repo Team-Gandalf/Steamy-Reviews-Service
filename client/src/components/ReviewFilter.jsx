@@ -3,6 +3,17 @@
 
 import React from 'react';
 
+import {
+  FilterBar,
+  FilterMenu,
+  ReviewType,
+  ReviewTypeTitle,
+  ReviewTypeMenu,
+  ReviewTypeContent,
+  Input,
+  Label,
+} from './styles/FilterBar.jsx';
+
 const ReviewFilter = (props) => {
   const { review, changeView } = props;
 
@@ -18,34 +29,34 @@ const ReviewFilter = (props) => {
   }
 
   return (
-    <div id="reviews_filter_options">
-      <div className="user_reviews_filter_menu flyout">
-        <div className="review_type">
-          <div className="title">
+    <FilterBar>
+      <FilterMenu>
+        <ReviewType>
+          <ReviewTypeTitle>
             Review Type
-          </div>
-          <div className="user_reviews_filter_menu_flyout">
-            <div className="user_reviews_filter_menu_content">
+          </ReviewTypeTitle>
+          <ReviewTypeMenu>
+            <ReviewTypeContent>
               <input type="radio" name="review_type" value="all" id="review_type_all" onChange={handleChange} />
-              <label htmlFor="review_type_all">
+              <Label>
                 {`All (${review.game_reviews})`}
-              </label>
+              </Label>
               <br />
               <input type="radio" name="review_type" value="positive" id="review_type_positive" onChange={handleChange} />
-              <label htmlFor="review_type_positive">
+              <Label>
                 {`Positive (${review.rating - 1})`}
-              </label>
+              </Label>
               <br />
               <input type="radio" name="review_type" value="negative" id="review_type_negative" onChange={handleChange} />
-              <label htmlFor="review_type_negative">
+              <Label>
                 {`Negative (${review.game_reviews - review.rating + 1})`}
-              </label>
+              </Label>
               <br />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </ReviewTypeContent>
+          </ReviewTypeMenu>
+        </ReviewType>
+      </FilterMenu>
+    </FilterBar>
   );
 };
 

@@ -1,6 +1,15 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable import/extensions */
 
 import React from 'react';
+
+import {
+  SummaryBar,
+  Summary,
+  SummaryTitle,
+  SummaryRating,
+  NumReviews,
+} from './styles/SummaryBar.jsx';
 
 const ReviewSummaryBar = (props) => {
   const { allReviews } = props;
@@ -27,18 +36,18 @@ const ReviewSummaryBar = (props) => {
 
 
   return (
-    <div className="user_reviews_summary_bar">
-      <div className="summary">
-        <div className="title">Overall Reviews:</div>
-        <span className="game_review_summary">{steamRating}</span>
+    <SummaryBar>
+      <Summary>
+        <SummaryTitle>Overall Reviews:</SummaryTitle>
+        <SummaryRating>{steamRating}</SummaryRating>
         {allReviews.length
           && (
-          <span>
+          <NumReviews>
             {`(${allReviews[0].game_reviews} reviews)`}
-          </span>
+          </NumReviews>
           )}
-      </div>
-    </div>
+      </Summary>
+    </SummaryBar>
   );
 };
 

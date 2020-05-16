@@ -1,38 +1,58 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable import/extensions */
 
 import React from 'react';
+
+import {
+  MiniProfile,
+  ShadowContent,
+  Container,
+  MiniBackground,
+  BackgroundBlur,
+  PlayerSection,
+  MiniAvatar,
+  MiniAvatarImg,
+  MiniPlayerContent,
+  Persona,
+  MiniProfileDetails,
+  PlayerDescription,
+  PlayerType,
+  PlayerXP,
+  FriendLevel,
+  FriendPlayerLevel,
+} from './styles/MiniProfile.jsx';
 
 const ReviewsMiniProfile = (props) => {
   const { user, display } = props;
 
   return (
-    <div className="miniprofile_hover" style={display}>
-      <div className="miniprofile_hover shadow_content">
-        <div className="miniprofile_hover container">
-          <div className="miniprofile_hover background">
-            <div className="miniprofile_hover backgroundblur" />
-          </div>
-          <div className="miniprofile_hover playersection">
-            <div className="playersection_avatar">
-              <img src={user.icon} alt={user.username} />
-            </div>
-            <div className="player_content">
-              <span className="persona">{user.username}</span>
-            </div>
-          </div>
-          <div className="miniprofile_hover details">
-            <div className="miniprofile_hover playerdescription">
-              <div className="type">{user.player_type}</div>
-              <div className="xp">{`${user.xp} XP`}</div>
-              <div className="friendPlayerLevel">
-                <span className="friendPlayerLevelNum">{user.friend_level}</span>
-              </div>
-              <div className="type">{`Steam Level: ${user.steam_level}`}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <MiniProfile style={display}>
+      <ShadowContent>
+        <Container>
+          <MiniBackground>
+            <BackgroundBlur />
+          </MiniBackground>
+          <PlayerSection>
+            <MiniAvatar>
+              <MiniAvatarImg src={user.icon} alt={user.username} />
+            </MiniAvatar>
+            <MiniPlayerContent>
+              <Persona>{user.username}</Persona>
+            </MiniPlayerContent>
+          </PlayerSection>
+          <MiniProfileDetails>
+            <PlayerDescription>
+              <PlayerType>{user.player_type}</PlayerType>
+              <PlayerXP>{`${user.xp} XP`}</PlayerXP>
+              <FriendLevel>
+                <FriendPlayerLevel>{user.friend_level}</FriendPlayerLevel>
+              </FriendLevel>
+              <PlayerType>{`Steam Level: ${user.steam_level}`}</PlayerType>
+            </PlayerDescription>
+          </MiniProfileDetails>
+        </Container>
+      </ShadowContent>
+    </MiniProfile>
   );
 };
 
