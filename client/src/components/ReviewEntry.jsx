@@ -71,7 +71,7 @@ const ReviewEntry = (props) => {
           {review.user.recommended ? (
             <Thumb>
               <img
-                src="http://54.67.101.150:4200/img/thumbsup.png"
+                src="https://fecreviewsimages.s3-us-west-1.amazonaws.com/thumbsup.png"
                 width="40"
                 height="40"
                 alt="thumbup"
@@ -81,7 +81,7 @@ const ReviewEntry = (props) => {
             : (
               <Thumb>
                 <img
-                  src="http://54.67.101.150:4200/img/thumbsdown.png"
+                  src="https://fecreviewsimages.s3-us-west-1.amazonaws.com/thumbsdown.png"
                   width="40"
                   height="40"
                   alt="thumbdown"
@@ -89,7 +89,7 @@ const ReviewEntry = (props) => {
               </Thumb>
             )}
           <ReviewSource
-            src="http://54.67.101.150:4200/img/steamicon.png"
+            src="https://fecreviewsimages.s3-us-west-1.amazonaws.com/steamicon.png"
             alt="steamy"
           />
           <VoteHeaderTitle>
