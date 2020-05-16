@@ -188,11 +188,11 @@ export const VoteUp = styled.span`
   padding: 0 5px;
   font-size: 12px;
   padding: 16px;
-  background: url('./img/tu.png') no-repeat;
+  background: url('http://54.67.101.150:4200/img/tu.png') no-repeat;
   background-position: left;
 
   &:hover {
-    background: url('./img/tuclicked.png') no-repeat;
+    background: url('http://54.67.101.150:4200/img/tuclicked.png') no-repeat;
     background-position: left;
   }
 `;
@@ -202,11 +202,11 @@ export const VoteDown = styled.span`
   font-size: 12px;
   line-height: 20px;
   padding: 16px;
-  background: url('./img/td.png') no-repeat;
+  background: url('http://54.67.101.150:4200/img/td.png') no-repeat;
   background-position: left;
 
   &:hover {
-    background: url('./img/tdclicked.png') no-repeat;
+    background: url('http://54.67.101.150:4200/img/tdclicked.png') no-repeat;
     background-position: left;
   }
 `;
@@ -216,11 +216,11 @@ export const VoteFunny = styled.span`
   font-size: 12px;
   line-height: 20px;
   padding: 16px;
-  background: url('./img/happy.png') no-repeat;
+  background: url('http://54.67.101.150:4200/img/happy.png') no-repeat;
   background-position: left;
 
   &:hover {
-    background: url('./img/happyclicked.png') no-repeat;
+    background: url('http://54.67.101.150:4200/img/happyclicked.png') no-repeat;
     background-position: left;
   }
 `;
