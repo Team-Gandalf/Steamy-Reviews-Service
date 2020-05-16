@@ -11,26 +11,30 @@ export const GlobalStyle = createGlobalStyle`
     color: #c6d4df;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
-    font-size: 12px;
   }
 `;
 
 export const ReviewsBackground = styled.div`
   display: block;
-  padding-top: 10rem;
+  padding-top: 1rem;
+  font-size: 12px;
 `;
 
 export const Title = styled.h2`
-  border-top: 1px solid black;
-  margin-bottom: 0px;
-  font-size: 14px;
-  text-transform: uppercase;
+  background-image: url('https://steamstore-a.akamaihd.net/public/images/v6/maincol_gradient_rule.png');
+  background-position: left bottom;
+  background-repeat: no-repeat no-repeat;
+  border-width: 0;
   color: #fff;
-  margin: 0 0 10px;
+  font-family: "Motiva Sans",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
   letter-spacing: 2px;
-  font-weight: normal;
-  padding-top: 2px;
-  width: 616px;
+  line-height: 26px;
+  margin: 0 0 10px;
+  padding: 2px 0 0;
+  text-transform: uppercase;
+  padding-top: 47rem;
 `;
 
 export const LeftCol = styled.div`
