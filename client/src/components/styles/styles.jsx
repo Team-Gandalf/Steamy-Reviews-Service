@@ -32,7 +32,7 @@ export const Title = styled.h2`
   letter-spacing: 2px;
   line-height: 26px;
   margin: 0 0 10px;
-  padding: 2px 0 0;
+  padding: 0 15rem 0 0;
   text-transform: uppercase;
   padding-top: 47rem;
 `;
