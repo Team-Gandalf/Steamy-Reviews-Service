@@ -16,7 +16,7 @@ import exampleData from './reviews.example';
 describe('Renders components successfully', () => {
   test('should render the Reviews component', () => {
     mount(<Reviews />);
-    expect(shallow(<Reviews />).find('.left-col').exists()).toBe(true);
+    expect(shallow(<Reviews />).exists()).toBe(true);
   });
 
   test('loads ReviewList component', () => {
