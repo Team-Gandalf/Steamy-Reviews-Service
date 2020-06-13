@@ -5,23 +5,23 @@ This app:
 * renders and append review data to the page
 * incorporates UI with each review like linking to the full review or showing profile data
 
-*Future Updates*
-* Profile achievements
-* right column bar with recent reviews
-* filter function for reviews
-* user input for own review
-
 ## Getting Started
+### Installation
 ```sh
 npm install -g webpack
 npm install
 ```
 
-
-## Running the tests
+### Running the tests
 ```sh
 npm run test
 ```
+> Backend
+* Unit tests for routes
+* End-to-end testing for server functionality
+
+> Frontend
+* Unit tests for client-side rendering
 
 ## Built With
 * [axios](https://www.npmjs.com/package/axios) - HTTP client for browser and node.js
