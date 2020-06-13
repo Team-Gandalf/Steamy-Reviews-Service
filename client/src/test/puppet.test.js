@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 require('regenerator-runtime/runtime');
 
-describe('Reviews rendering', () => {
+xdescribe('Reviews rendering', () => {
   beforeAll(async () => {
     await page.goto('http://localhost:4200/?=1');
   });
