@@ -5,6 +5,10 @@ This app:
 * renders and append review data to the page
 * incorporates UI with each review like linking to the full review or showing profile data
 
+![reviews demo](reviewsdemo.png)
+
+![filter demo](filter.png)
+
 ## Getting Started
 ### Installation
 ```sh
