@@ -8,7 +8,8 @@
     "build:dev": "webpack -d --watch",
     "seed": "node db/faker.js",
     "start": "nodemon server/server.js -i client",
-    "test": "jest --detectOpenHandles --coverage --watch"
+    "test": "jest --forceExit --detectOpenHandles",
+    "test-watch": "jest --detectOpenHandles --coverage --watch"
   },
   "repository": {
     "type": "git",
