@@ -54,7 +54,6 @@
     "jest-environment-puppeteer": "^4.4.0",
     "jest-puppeteer": "^4.4.0",
     "nodemon": "^2.0.3",
-    "puppeteer": "^3.0.4",
     "react-test-renderer": "^16.13.1",
     "regenerator-runtime": "^0.13.5",
     "style-loader": "^1.2.1",
