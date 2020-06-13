@@ -122,20 +122,7 @@ module.exports = {
         '<rootDir>/client/src/test/reviews.test.js',
       ],
       verbose: false,
-    },
-    {
-      clearMocks: true,
-      coverageDirectory: 'coverage',
-      displayName: 'puppeteer',
-      globalSetup: 'jest-environment-puppeteer/setup',
-      globalTeardown: 'jest-environment-puppeteer/teardown',
-      testEnvironment: 'jest-environment-puppeteer',
-      preset: 'jest-puppeteer',
-      testMatch: [
-        '<rootDir>/client/src/test/puppet.test.js',
-      ],
-      verbose: false,
-    },
+    }
   ],
 
   // Use this configuration option to add custom reporters to Jest

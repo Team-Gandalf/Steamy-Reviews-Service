@@ -51,8 +51,6 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "jest": "^25.5.3",
-    "jest-environment-puppeteer": "^4.4.0",
-    "jest-puppeteer": "^4.4.0",
     "nodemon": "^2.0.3",
     "react-test-renderer": "^16.13.1",
     "regenerator-runtime": "^0.13.5",
